@@ -4,55 +4,127 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="ROBOTS" content="follow,index">
+<meta name="Description" content="Verbringen Sie einen wunderschönen Urlaub in einem Apartment direkt am Strand von New Smyrna Beach, Florida. New Smyrna liegt zwischen Daytona Beach und Kennedy Space Center, unweit von Orlando">
+<meta name="Author" content="Alexander Wagner">
+<meta name="Copyright" content="Alexander Wagner 2003">
+<title>Florida Ferienwohnung direkt am Strand von New Smyrna Beach</title>
+<link rel="SHORTCUT ICON" href="https://www.florida-strandwohnung.de/favicon.ico" type="image/ico">
 <style type="text/css">
 BODY {font-weight:500; background-image:url('images/muschel_001.jpg'); background-attachment:fixed; color: black; width: 100%; background-repeat:no-repeat; background-color:#fffff6; overflow-x: hidden;}
-div {font-family: arial, bookman old style, fantasy; font-size: 13pt}
+h1 {font-family: wide latin, arial black, helvetica, sans-serif; font-size: 2.4em}
+h2 {font-family: wide latin, arial black, helvetica, sans-serif; font-size: 26pt}
+p {font-family: arial, bookman old style, fantasy; font-size: 13pt; left: 15px}
+p.rahmen {background: silver; line-height: 1.2; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; text-align: center}
+div {font-family: arial, bookman old style, fantasy; font-size: 13pt} 
+#menubar {position:absolute;top:0px;left:150px;z-index:3;}
+table.menus {position:absolute; top:20px;left:0px;z-index:5;font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
+table.menuleiste {font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
+table.weiteremenus {border:2px solid #cccccc; font-weight:bold ;font-family:arial,helvetica;font-size:8pt;background-color:#ffffc0}
+a:link, a:visited {color:black; font-family:arial, helvetica; text-decoration:none;}
+a:hover {color:#000000; text-decoration:none;}
 </style>
+
 <script language="javascript" type="text/javascript">
 function maximize() { window.resizeTo(screen.availWidth, screen.availHeight); window.moveTo(0,0); }
+function loeschen() { if(document.getElementById) { document.getElementById("menus0").style.visibility = "hidden"; document.getElementById("menus1").style.visibility = "hidden"; document.getElementById("menus2").style.visibility = "hidden"; document.getElementById("menus3").style.visibility = "hidden"; document.getElementById("menus4").style.visibility = "hidden"; document.getElementById("menus5").style.visibility = "hidden"; ruecksetz(); } }
+function overmenus0() { document.getElementById("menus0").style.visibility = "visible"; }
+function overmenus1() { document.getElementById("menus1").style.visibility = "visible"; }
+function overmenus2() { document.getElementById("menus2").style.visibility = "visible"; }
+function overmenus3() { document.getElementById("menus3").style.visibility = "visible"; }
+function overmenus4() { document.getElementById("menus4").style.visibility = "visible"; }
+function overmenus5() { document.getElementById("menus5").style.visibility = "visible"; }
+function rein(zelle) { ruecksetz(); zelle.style.backgroundColor = "#ffcc99"; }
+function ruecksetz() { var farbe="#ffcc99"; m0.style.backgroundColor = farbe; m1.style.backgroundColor = farbe; m2.style.backgroundColor = farbe; m3.style.backgroundColor = farbe; m4.style.backgroundColor = farbe; m5.style.backgroundColor = farbe; }
+
+var z = 0;
+function countdown() {
+    var now = new Date(); var aktuellzeit = now.getTime() / 1000;
+    var shuttlestarts = [new Date(2011, 6, 8, 0, 0, 0), new Date(2024, 7, 26, 0, 0, 0), new Date(2024, 8, 24, 0, 0, 0), new Date(2024, 9, 10, 0, 0, 0), new Date(2099, 8, 9, 9, 9, 9)];
+    var monatsname = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober", "November", "Dezember"];
+    while (z < shuttlestarts.length - 1 && (shuttlestarts[z].getTime() / 1000) < aktuellzeit) { z++; }
+    var zielDatum = shuttlestarts[z];
+    var rest = Math.floor((zielDatum.getTime() / 1000) - aktuellzeit);
+    if (rest < 0) rest = 0;
+    var ctag = Math.floor(rest / 86400); var cstunde = Math.floor(rest / 3600) - (ctag * 24); var cminute = Math.floor(rest / 60) - (ctag * 1440) - (cstunde * 60); var csekunde = rest - (ctag * 86400) - (cstunde * 3600) - (cminute * 60);
+    if (document.tafel) {
+        document.tafel.countertag.value = "      " + (ctag < 10 ? "0"+ctag : ctag);
+        document.tafel.counterstunde.value = "       " + (cstunde < 10 ? "0"+cstunde : cstunde);
+        document.tafel.counterminute.value = "       " + (cminute < 10 ? "0"+cminute : cminute);
+        document.tafel.counterssekunde.value = "       " + (csekunde < 10 ? "0"+csekunde : csekunde);
+        document.tafel.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+    }
+    setTimeout(countdown, 1000);
+}
+
+g_fPlayMode = 0; g_iimg = -1; g_imax = 0; g_ImageTable = new Array();
+function ChangeImage(fFwd) { if (fFwd) { if (++g_iimg==g_imax) g_iimg=0; } else { if (g_iimg==0) g_iimg=g_imax; g_iimg--; } Update(); }
+function getobject(obj){ if (document.getElementById) return document.getElementById(obj); else if (document.all) return document.all[obj]; }
+function Update(){ getobject("_Ath_Slide" ).src = g_ImageTable[g_iimg][0]; getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1]; getobject("_Ath_Img_X").innerHTML = g_iimg + 1; getobject("_Ath_Img_N").innerHTML = g_imax; }
+function stop() { g_fPlayMode = !g_fPlayMode; getobject("btnPrev").disabled = getobject("btnNext").disabled = true; g_iimg=0; Update(); if (g_iimg==0) Play(); }         
+function Play() { g_fPlayMode = !g_fPlayMode; if (g_fPlayMode) { getobject("btnPrev").disabled = getobject("btnNext").disabled = true; Next(); } else { getobject("btnPrev").disabled = getobject("btnNext").disabled = false; } }
+function OnImgLoad() { if (g_fPlayMode) window.setTimeout("Tick()", g_dwTimeOutSec*1000); }
+document.addEventListener("DOMContentLoaded", function() { g_dwTimeOutSec=2; });
+function Tick() { if (g_fPlayMode) Next(); }
+function Prev() { ChangeImage(false); }
+function Next() { ChangeImage(true); }
+
+g_ImageTable[g_imax++] = new Array ("images/bilder/001_condo_balkon_001.jpg", "Florida Ferienwohnung - die Aussicht vom Balkon");
+g_ImageTable[g_imax++] = new Array ("images/bilder/005_condo_004.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/010_condo_003.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/015_condo_005.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/020_condo_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/025_condo_wohnzimmer_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/030_condo_schlafzimmer_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/035_condo_gaestezimmer_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/040_condo_flur_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/045_condo_bad_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/050_condo_bad_002.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/055_condo_kueche_001.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/060_strand_001.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/065_strand_002.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/070_strand_003.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/075_strand_004.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/080_strand_005.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/085_strand_006.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/090_condo_002.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/115_voegel_004.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/125_voegel_006.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/135_ausflug_ponce_de_leon_lighthouse.jpg", "Ponce De Leon");
+g_ImageTable[g_imax++] = new Array ("images/bilder/150_ausflug_daytona_003.jpg", "Daytona Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/155_ausflug_orlando_001.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/165_ausflug_orlando_002.jpg", "Florida Strandwohnung - New Smyrna Beach");
+g_ImageTable[g_imax++] = new Array ("images/bilder/180_ausflug_blanchard_park_orlando_003.jpg", "Blanchard Park Orlando");
+g_ImageTable[g_imax++] = new Array ("images/bilder/185_ausflug_bluesprings_001.jpg", "Blue Springs");
+g_ImageTable[g_imax++] = new Array ("images/bilder/190_ausflug_bluesprings_002.jpg", "Blue Springs");
+g_ImageTable[g_imax++] = new Array ("images/bilder/205_ausflug_bluesprings_005.jpg", "Blue Springs");
+g_ImageTable[g_imax++] = new Array ("images/bilder/condo6_.jpg", "Seacoast Condominium ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/condo8_.jpg", "Swimming Pool ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/orlando12_.jpg", "Universal Studios, Orlando ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/orlando14_.jpg", "Sea World, Orlando ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/orlando16_.jpg", "Epcot Center, Orlando ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/orlando19_.jpg", "Wekiwa Springs State Park ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/shuttle4_.jpg", "Kennedy Space Center ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/daytona.jpg", "Daytona USA ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/strand5_.jpg", "Strand von New Smyrna Beach ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/sonnenuntergang.jpg", "Sonnenuntergang ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/seacoast_2.jpg", "Seacoast Condominium ");
+g_ImageTable[g_imax++] = new Array ("images/bilder/300_condo_006.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+g_ImageTable[g_imax++] = new Array ("images/bilder/305_condo_007.jpg", "Florida Ferienwohnung - Seacoast Condominium");
+
+var text = "                              Es gibt noch freie Termine in der Zeit von März bis Dezember 2026                             ";
+var j=0; var l=0;
+function lauftext() {
+    if (j<text.length) { j=j+1; } else { j=0; l=l+1; }
+    var ticktext = text.substring(j,text.length)+text.substring(0,j);
+    if (document.getElementById("tickfeld")) { document.getElementById("tickfeld").value = (l < 2) ? ticktext : text; }
+    setTimeout(lauftext, 100);
+}
 </script>
 </head>
-<body onload="maximize()" vlink="gray">
+<body onload="stop(), lauftext(), countdown(), maximize()" vlink="gray">
 
-<!-- DISNEY BEREICH -->
-<div style="position:absolute; top:239%; left: 5%; width: 90%;">
-<table border="0" cellspacing="1%" cellpadding="0%">
-<tbody>
-<tr valign="middle" align="center">
-<td style="margin-left: 10%; width:30% ;float: left ; z-index: 2">
-<a href="https://www.disneyworld.eu/" target="_blank">
-    <img alt="Willkommen in Disneyland" border="0" height="186" width="167" src="images/disney.gif">
-</a>
-</td>
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; width: 62%; text-align: center ; z-index: 2 ;font-weight:500">
-Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
-Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas,<br>
-oder der Brunnen der ewigen Jugend in Ponce de Leon<br>
-im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
-Das sportliche Angebot ist sehr umfangreich.<br>
-New Smyrna Beach verfügt unter anderem über<br>
-zahlreiche Golf- und Tennisplätze.
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<!-- FLAMINGO BEREICH -->
-<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:490%; width: 30%; text-align: center ; left: 50%; font-weight:500;">
-Die komplette Wohnung gibt es schon ab ca. 130,- EUR pro Tag.<br>
-(Monatspreis in der Nebensaison umgerechnet auf Tagesbasis<br>
-bei einem USD-Kurs von 1,10). Darin sind bereits alle Kosten<br>
-wie Steuern oder Endreinigung enthalten.<br><br>
-Eine genaue Übersicht finden Sie in der <a href="preise.htm">Preisliste</a>.<br><br>
-Bei der Suche nach einem günstigen Flug sind wir gerne behilflich.
-</div>
-
-<div style="position: absolute; top:490%; left: 5%; width: 20%;">
-    <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" target="_blank">
-        <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
-    </a>
-</div>
-
-</body>
-</html>
+<div id="menubar">
+<table id="menutab" class="menuleiste" bgcolor="#FFFFC0" cellpadding="0" cellspacing="0" style="border:2px solid #cccccc;">
+<tr>
+<td onmouseover="rein(this)" id="m0" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus0()"> Wichtige Infos </a></td>
+<td onmouseover="rein(this)" id="m1" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus1
