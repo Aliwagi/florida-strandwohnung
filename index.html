@@ -96,6 +96,47 @@ function overmenus2() {
     document.getElementById("menus5").style.visibility = "hidden";
 }
 
+var z = 0;
+function countdown() {
+    var now = new Date();
+    var aktuellzeit = now.getTime() / 1000;
+    var shuttlestarts = [
+        new Date(2011, 6, 8, 0, 0, 0),
+        new Date(2024, 7, 26, 0, 0, 0),
+        new Date(2024, 8, 24, 0, 0, 0),
+        new Date(2024, 9, 10, 0, 0, 0),
+        new Date(2099, 8, 9, 9, 9, 9)
+    ];
+    var monatsname = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober", "November", "Dezember"];
+
+    while (z < shuttlestarts.length - 1 && (shuttlestarts[z].getTime() / 1000) < aktuellzeit) {
+        z++;
+    }
+
+    var zielDatum = shuttlestarts[z];
+    var rest = Math.floor((zielDatum.getTime() / 1000) - aktuellzeit);
+    if (rest < 0) rest = 0;
+
+    var ctag = Math.floor(rest / 86400);
+    var cstunde = Math.floor(rest / 3600) - (ctag * 24);
+    var cminute = Math.floor(rest / 60) - (ctag * 1440) - (cstunde * 60);
+    var csekunde = rest - (ctag * 86400) - (cstunde * 3600) - (cminute * 60);
+
+    ctag = ctag < 10 ? "0" + ctag : ctag;
+    cstunde = cstunde < 10 ? "0" + cstunde : cstunde;
+    cminute = cminute < 10 ? "0" + cminute : cminute;
+    csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
+
+    if (document.tafel) {
+        document.tafel.countertag.value = "      " + ctag;
+        document.tafel.counterstunde.value = "       " + cstunde;
+        document.tafel.counterminute.value = "       " + cminute;
+        document.tafel.counterssekunde.value = "       " + csekunde;
+        document.tafel.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+    }
+    setTimeout(countdown, 1000);
+}
+
 function overmenus3() {
     document.getElementById("menus0").style.visibility = "hidden";
     document.getElementById("menus1").style.visibility = "hidden";
@@ -191,6 +232,10 @@ function OnImgLoad() {
     if (g_fPlayMode) window.setTimeout("Tick()", g_dwTimeOutSec*1000);
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    g_dwTimeOutSec=2;
+});
+
 function Tick() {
     if (g_fPlayMode) Next();
 }
@@ -245,49 +290,6 @@ g_ImageTable[g_imax++] = new Array ("images/bilder/sonnenuntergang.jpg", "Sonnen
 g_ImageTable[g_imax++] = new Array ("images/bilder/seacoast_2.jpg", "Seacoast Condominium ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/300_condo_006.jpg", "Florida Ferienwohnung - Seacoast Condominium");
 g_ImageTable[g_imax++] = new Array ("images/bilder/305_condo_007.jpg", "Florida Ferienwohnung - Seacoast Condominium");
-
-g_dwTimeOutSec=2;
-
-var z = 0;
-function countdown() {
-    var now = new Date();
-    var aktuellzeit = now.getTime() / 1000;
-    var shuttlestarts = [
-        new Date(2011, 6, 8, 0, 0, 0),
-        new Date(2024, 7, 26, 0, 0, 0),
-        new Date(2024, 8, 24, 0, 0, 0),
-        new Date(2024, 9, 10, 0, 0, 0),
-        new Date(2099, 8, 9, 9, 9, 9)
-    ];
-    var monatsname = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober", "November", "Dezember"];
-
-    while (z < shuttlestarts.length - 1 && (shuttlestarts[z].getTime() / 1000) < aktuellzeit) {
-        z++;
-    }
-
-    var zielDatum = shuttlestarts[z];
-    var rest = Math.floor((zielDatum.getTime() / 1000) - aktuellzeit);
-    if (rest < 0) rest = 0;
-
-    var ctag = Math.floor(rest / 86400);
-    var cstunde = Math.floor(rest / 3600) - (ctag * 24);
-    var cminute = Math.floor(rest / 60) - (ctag * 1440) - (cstunde * 60);
-    var csekunde = rest - (ctag * 86400) - (cstunde * 3600) - (cminute * 60);
-
-    ctag = ctag < 10 ? "0" + ctag : ctag;
-    cstunde = cstunde < 10 ? "0" + cstunde : cstunde;
-    cminute = cminute < 10 ? "0" + cminute : cminute;
-    csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
-
-    if (document.tafel) {
-        document.tafel.countertag.value = "      " + ctag;
-        document.tafel.counterstunde.value = "       " + cstunde;
-        document.tafel.counterminute.value = "       " + cminute;
-        document.tafel.countersekunde.value = "       " + csekunde;
-        document.tafel.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + stag + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
-    }
-    setTimeout(countdown, 1000);
-}
 
 var text, j, ticktext, l;
 var taktuellzeit, tdatum, tjahr, tmonat, tmonatsname;
@@ -593,7 +595,7 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:207%">
+<div style="position:absolute; top:227%">
 <table border="0" width="100%" cellspacing="1%" cellpadding="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -612,7 +614,7 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:243%">
+<div style="position:absolute; top:263%">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -634,13 +636,13 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position: absolute; top:290%; left: 42%; width: 20%">
+<div style="position: absolute; top:310%; left: 42%; width: 20%">
     <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/condo_001.png" width="550" height="416">
 </div>
  <br>
  <br>
 
-<div style="clear: both; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; left: 2%; width: 36%; text-align: center ; top: 310%; float: left">
+<div style="clear: both; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; left: 2%; width: 36%; text-align: center ; top: 330%; float: left">
  Die Wohnung besteht aus <br>
  2 Schlafräumen, 2 Bädern, <br>
  Wohnzimmer, Küche und Balkon. <br>
@@ -662,13 +664,13 @@ Die Ausstattungen beinhaltet <br>
  und Badetücher. 
 </div>
 
-<div style="position: absolute; top:375%; left: 15%; width: 20%;">
+<div style="position: absolute; top:395%; left: 15%; width: 20%;">
     <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" onclick="javascript:DownloadCounter(this.href)" target="_blank">
         <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
     </a>
 </div>
 
-<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:375%; width: 30%; text-align: center ; left: 50%">
+<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:395%; width: 30%; text-align: center ; left: 50%">
   Die komplette Wohnung gibt es <br>
    schon ab ca 130,- EUR pro Tag. <br>
  ( Monatspreis in der Nebensaison umgerechnet <br>
@@ -685,17 +687,12 @@ Die Ausstattungen beinhaltet <br>
        Flug sind wir gerne behilflich 
 </div>
 
-<div style="position: absolute; top:425%; left: 10%; right: 30%">
+<div style="position: absolute; top:445%; left: 10%; right: 30%">
 <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
  <br>
  <br>
 
-<div style="position: absolute; top:425%; left: 10%; right: 30%">
-<img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
- <br>
- <br>
-
-<div style="position: absolute; top:605%; text-align:center; align:center; left: 10%; right: 10%">
+<div style="position: absolute; top:625%; text-align:center; align:center; left: 10%; right: 10%">
 <form id="tafel" name="tafel" style="text-align:center">
 <fieldset style="background-color:#DDEEFF">
 <table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
@@ -731,14 +728,14 @@ Die Ausstattungen beinhaltet <br>
 <tr>
 <td> </td>
 <td><b>Sekunden: </b></td>
-<td><input id="countersekunde" name="countersekunde" size="7"></td>
+<td><input id="countersekunde" name="counterssekunde" size="7"></td>
 </tr>
 </table> 
 </fieldset>
 </form>
 </div>
 
-<div style="position: absolute; TOP: 466%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
+<div style="position: absolute; TOP: 486%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
 <center>
 Sie werden einen unvergesslichen Urlaub erleben.<br>
 Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
@@ -753,7 +750,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </center>
 </div>
 
-<div style="position: absolute; TOP: 524%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
+<div style="position: absolute; TOP: 544%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
 <center>
 <table width="90%">
 <tbody>
@@ -782,7 +779,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <p> </p>
 </div>
 
-<div style="position: absolute; TOP: 640%; text-align:center; align:center; width:80% ; left:10%; right:10%">
+<div style="position: absolute; TOP: 660%; text-align:center; align:center; width:80% ; left:10%; right:10%">
 <p align="center">
 <a href="termine.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier erfahren Sie, ob Ihr Wunschtermin noch frei ist" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Belegungsplan  </a> 
 <a href="preise.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier gibt es eine detailierte Preisliste" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Preise  </a> 
