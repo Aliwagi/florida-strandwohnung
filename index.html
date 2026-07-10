@@ -57,6 +57,7 @@ function maximize() {
     window.moveTo(0,0);
 }
 
+// Systemische Menüsteuerung
 function loeschen() {
     if(document.getElementById) {
         document.getElementById("menus0").style.visibility = "hidden";
@@ -619,7 +620,6 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<!-- KORREKTUR: POOL- UND TEXT-BLOCK SYSTEMISCH UM +20% VERSCHOBEN AUF TOP 355% GEGEN DIE OVERLAP-KOLLISION -->
 <div style="position:absolute; top:355%">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
@@ -642,7 +642,6 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<!-- LINEARE VERSCHIEBUNG (+20%) ALLER FOLGENDEN ABSCHNITTE ZUR ELEMENT-TRENNUNG -->
 <div style="position: absolute; top:402%; left: 42%; width: 20%">
     <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/condo_001.png" width="550" height="416">
 </div>
@@ -671,8 +670,9 @@ Die Ausstattungen beinhaltet <br>
  und Badetücher. 
 </div>
 
+<!-- KORREKTUR: ETABLIERUNG SAUBERER PROPORTIONEN FÜR DEN UNTEREN STREAM AB TOP 490% -->
 <!-- NSB8 -->
-<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:474%; width: 30%; text-align: center ; left: 50%">
+<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:490%; width: 30%; text-align: center ; left: 50%">
   Die komplette Wohnung gibt es <br>
    schon ab ca 130,- EUR pro Tag. <br>
  ( Monatspreis in der Nebensaison umgerechnet <br>
@@ -681,27 +681,25 @@ Die Ausstattungen beinhaltet <br>
  Steuern oder Endreinigung<br>
  enthalten. <br>
  <br>
- Eine genaue Übersicht finden Sie <br>
-      in der <br>
-         <a class="preisliste" id="preisliste" href="preise.htm" onclick="javascript:DownloadCounter(this.href)"> Preisliste </a>. <br>
- <br>
  Bei der Suche nach einem günstigen <br>
        Flug sind wir gerne behilflich 
 </div>
 
-<div style="position: absolute; top:494%; left: 15%; width: 20%;">
+<div style="position: absolute; top:550%; left: 15%; width: 20%;">
     <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" onclick="javascript:DownloadCounter(this.href)" target="_blank">
         <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
     </a>
 </div>
 
+<!-- KORREKTUR: PANORAMA DEFINITIV AUF TOP 590% VERSCHOBEN (KLART TEXTKOLLISION AUS IMAGE_175D45.JPG) -->
 <!-- Wohnzimmer komplett ehem Flamingo -->
-<div style="position: absolute; top:504%; left: 10%; right: 30%">
+<div style="position: absolute; top:590%; left: 10%; right: 30%">
 <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
  <br>
  <br>
 
-<div style="position: absolute; TOP: 521%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
+<!-- KORREKTUR: URSTAU-TEXTBLOCK UNTERHALB DES PANORAMAS AUF TOP 650% GEÖFFNET -->
+<div style="position: absolute; TOP: 650%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
 <center>
 Sie werden einen unvergesslichen Urlaub erleben.<br>
 Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
@@ -716,7 +714,8 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </center>
 </div>
 
-<div style="position: absolute; TOP: 579%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
+<!-- KORREKTUR: SLIDESHOW-GALERIE AUF TOP 720% REKALKULIERT -->
+<div style="position: absolute; TOP: 720%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
 <center>
 <table width="90%">
 <tbody>
@@ -745,7 +744,8 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <p> </p>
 </div>
 
-<div style="position: absolute; top:697%; text-align:center; align:center; left: 10%; right: 10%">
+<!-- KORREKTUR: RAKETEN-COUNTDOWN-TAFEL FEHLERFREI AUF TOP 830% GESETZT -->
+<div style="position: absolute; top:830%; text-align:center; align:center; left: 10%; right: 10%">
 <form id="tafel" name="tafel" style="text-align:center">
 <fieldset style="background-color:#DDEEFF">
 <table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
@@ -788,7 +788,8 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </form>
 </div>
 
-<div style="position: absolute; TOP: 695%; text-align:center; align:center; width:80% ; left:10%; right:10%">
+<!-- KORREKTUR: FOOTER-NAVIGATION AUF ABSCHLIESSENDE TOP 890% DISPLOZIERT -->
+<div style="position: absolute; TOP: 890%; text-align:center; align:center; width:80% ; left:10%; right:10%">
 <p align="center">
 <a href="termine.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier erfahren Sie, ob Ihr Wunschtermin noch frei ist" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Belegungsplan  </a> 
 <a href="preise.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier gibt es eine detailierte Preisliste" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Preise  </a> 
