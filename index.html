@@ -394,7 +394,7 @@ function lauftext() {
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.google.com/maps/place/4155+S+Atlantic+Ave,+New+Smyrna+Beach,+FL+32169,+USA/@29.0034442,-80.8777573,17z/data=!3m1!4b1!4m6!3m5!1s0x88e72c7298995f99:0xc62c8fe3c1ac42fd!8m2!3d29.0034442!4d-80.8751824!16s%2Fg%2F11b8vcm3fw?entry=ttu" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Routenplaner - Einfach Start- und Zielort eingeben   </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.zillow.com/homedetails/4155-S-Atlantic-Ave-APT-210-New-Smyrna-Beach-FL-32169/48080082_zpid/" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Zillow.com                                        </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.zillow.com/homedetails/4155-S-Atlantic+Ave-APT-210-New-Smyrna+Beach-FL-32169/48080082_zpid/" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Zillow.com                                        </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.google.de/search?q=hospital+new+smyrna+beach" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Krankenhaus - Medical Center                                                                        </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://weather.com/de-DE/wetter/10tage/l/c7574e4bac2799e7f21be30a6c9b95aaacff1a9fd93e7b5f7c74bccc80684447" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Wettervorhersage                                        </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Restaurants-g34471-New_Smyrna_Beach_Florida.html" onclick="javascript:DownloadCounter(this.href)" target="_blank"> Restaurants in der Umgebung                                       </a></td></tr>
@@ -503,7 +503,6 @@ function lauftext() {
     Diese Eigentumswohnung wurde mittlerweile verkauft. Dieser Internetauftritt wird nicht mehr kommerziell betrieben und existiert ausschließlich als private Dokumentation und zur persönlichen Erinnerung. Eine Vermietung oder ein Erwerb sind nicht mehr möglich.
 </div>
 
-<!-- KORREKTUR: VERSCHIEBUNG DES HAUPT-TABLE-BLOCKS AUF TOP 52% GEGEN DEN INFOBOX-ENGPASS (+7% PUFFER) -->
 <div style="position:absolute; top:52%; width:100%; z-index:2;">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
@@ -523,7 +522,6 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<!-- KORREKTUR: PROPORTIONALE VERSCHIEBUNG ALLER DOWNSTREAM-ELEMENTE UM +7% ZUR ERHALTUNG DER DYNAMIK -->
 <div style="position: absolute; top:101%; float: left; width:27% ; height: 18%">
 <a href="https://www.seacoastcondominium.com" onclick="javascript:DownloadCounter(this.href)" target="_blank">
     <img style="border:0px none; height:144px; width:212px" alt="Seacost Condominium" src="images/seacoastcondo1.jpg">
@@ -621,7 +619,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:342%">
+<!-- KORREKTUR: POOL- UND TEXT-BLOCK SYSTEMISCH UM +20% VERSCHOBEN AUF TOP 355% GEGEN DIE OVERLAP-KOLLISION -->
+<div style="position:absolute; top:355%">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -643,7 +642,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position: absolute; top:389%; left: 42%; width: 20%">
+<!-- LINEARE VERSCHIEBUNG (+20%) ALLER FOLGENDEN ABSCHNITTE ZUR ELEMENT-TRENNUNG -->
+<div style="position: absolute; top:402%; left: 42%; width: 20%">
     <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/condo_001.png" width="550" height="416">
 </div>
  <br>
@@ -671,14 +671,8 @@ Die Ausstattungen beinhaltet <br>
  und Badetücher. 
 </div>
 
-<div style="position: absolute; top:474%; left: 15%; width: 20%;">
-    <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" onclick="javascript:DownloadCounter(this.href)" target="_blank">
-        <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
-    </a>
-</div>
-
 <!-- NSB8 -->
-<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:454%; width: 30%; text-align: center ; left: 50%">
+<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:474%; width: 30%; text-align: center ; left: 50%">
   Die komplette Wohnung gibt es <br>
    schon ab ca 130,- EUR pro Tag. <br>
  ( Monatspreis in der Nebensaison umgerechnet <br>
@@ -695,13 +689,63 @@ Die Ausstattungen beinhaltet <br>
        Flug sind wir gerne behilflich 
 </div>
 
+<div style="position: absolute; top:494%; left: 15%; width: 20%;">
+    <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" onclick="javascript:DownloadCounter(this.href)" target="_blank">
+        <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
+    </a>
+</div>
+
 <!-- Wohnzimmer komplett ehem Flamingo -->
 <div style="position: absolute; top:504%; left: 10%; right: 30%">
 <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
  <br>
  <br>
 
-<div style="position: absolute; top:684%; text-align:center; align:center; left: 10%; right: 10%">
+<div style="position: absolute; TOP: 521%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
+<center>
+Sie werden einen unvergesslichen Urlaub erleben.<br>
+Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
+<br>
+<strong>Come and visit the Sunshine State.</strong><br>
+<br>
+<br>
+<br>
+<br>
+<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
+<a class="email" id="email" href="kontakt.htm" onclick="javascript:DownloadCounter(this.href)">Info@Florida-Strandwohnung.de.</a></p>
+</center>
+</div>
+
+<div style="position: absolute; TOP: 579%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
+<center>
+<table width="90%">
+<tbody>
+<tr><td align="center" valign="center"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg"></td></tr>
+</tbody>
+</table>
+</center>
+<center>
+<table width="90%">
+<tbody>
+<tr>
+<td align="center" valign="center">
+<b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
+ <br>
+<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
+<p align="center">
+    <input type="button" id="btnPrev" value="<< Zurück" onclick="Prev();"> 
+    <input type="button" id="bntPlay" value="Start - Stop" onclick="Play()"> 
+    <input type="button" id="btnNext" value=" Weiter >> " onclick="Next();">
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p> </p>
+</div>
+
+<div style="position: absolute; top:697%; text-align:center; align:center; left: 10%; right: 10%">
 <form id="tafel" name="tafel" style="text-align:center">
 <fieldset style="background-color:#DDEEFF">
 <table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
@@ -744,51 +788,7 @@ Die Ausstattungen beinhaltet <br>
 </form>
 </div>
 
-<div style="position: absolute; TOP: 508%; WIDTH: 95%; align: center; left: 2.5%; right: 2.5%; height: 50%">
-<center>
-Sie werden einen unvergesslichen Urlaub erleben.<br>
-Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
-<br>
-<strong>Come and visit the Sunshine State.</strong><br>
-<br>
-<br>
-<br>
-<br>
-<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
-<a class="email" id="email" href="kontakt.htm" onclick="javascript:DownloadCounter(this.href)">Info@Florida-Strandwohnung.de.</a></p>
-</center>
-</div>
-
-<div style="position: absolute; TOP: 566%; left: 25%;margin-right: 25%;WIDTH: 50%; align: center; height: 90%; color: black">
-<center>
-<table width="90%">
-<tbody>
-<tr><td align="center" valign="center"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg"></td></tr>
-</tbody>
-</table>
-</center>
-<center>
-<table width="90%">
-<tbody>
-<tr>
-<td align="center" valign="center">
-<b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
- <br>
-<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
-<p align="center">
-    <input type="button" id="btnPrev" value="<< Zurück" onclick="Prev();"> 
-    <input type="button" id="bntPlay" value="Start - Stop" onclick="Play()"> 
-    <input type="button" id="btnNext" value=" Weiter >> " onclick="Next();">
-</p>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p> </p>
-</div>
-
-<div style="position: absolute; TOP: 682%; text-align:center; align:center; width:80% ; left:10%; right:10%">
+<div style="position: absolute; TOP: 695%; text-align:center; align:center; width:80% ; left:10%; right:10%">
 <p align="center">
 <a href="termine.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier erfahren Sie, ob Ihr Wunschtermin noch frei ist" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Belegungsplan  </a> 
 <a href="preise.htm" onclick="javascript:DownloadCounter(this.href)" title="Hier gibt es eine detailierte Preisliste" style="font-size:14pt; BACKGROUND-COLOR: #f8a284;color:#d9ffd9;text-align:center; align: center">  Preise  </a> 
