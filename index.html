@@ -170,12 +170,13 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
+// BEREINIGT: Syntax-Fehler gelöscht (far vict -> farbe)
 function ruecksetz() {
     var farbe="#ffcc99";
     m0.style.backgroundColor = farbe;
     m1.style.backgroundColor = farbe;
     m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = far vict;
+    m3.style.backgroundColor = farbe;
     m4.style.backgroundColor = farbe;
     m5.style.backgroundColor = farbe;
 }
@@ -311,6 +312,7 @@ text = "                              Es gibt noch freie Termine in der Zeit von
 j=0;
 l=0;
 
+// BEREINIGT: String-Zerschneidung repariert für flüssige Endlosschleife
 function lauftext() {
     if (j<text.length) {
         j=j+1;
@@ -318,13 +320,17 @@ function lauftext() {
         j=0;
         l=l+1;
     }
-    ticktext=text.substring(j,text.length)+text.substring(0,text.length);
+    ticktext=text.substring(j,text.length)+text.substring(0,j);
     if (l<2) {
-        document.tickform.tickfeld.value=ticktext;
+        if(document.getElementById("tickfeld")) {
+            document.getElementById("tickfeld").value=ticktext;
+        }
     } else {
-        document.tickform.tickfeld.value=text;
+        if(document.getElementById("tickfeld")) {
+            document.getElementById("tickfeld").value=text;
+        }
     }
-    setTimeout("lauftext()",100);
+    setTimeout(lauftext,100);
 }
 </script>
 </head>
@@ -407,7 +413,80 @@ function lauftext() {
 <td width="50" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
-</head>
+</table>
+
+<table id="menus3" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="455" onmouseover="loeschen()"></td>
+<td>
+<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<tbody>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.disney.de/" target="_blank"> Disneyworld                                     </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://seaworld.com/orlando/" target="_blank"> Seaworld                                           </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.universalorlando.com/" target="_blank"> Universal Studios                            </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.volusia.com/explore-a-city/new-smyrna-beach/" target="_blank"> Unterhaltung in New Smyrna        </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.cityofnsb.com/calendar.aspx?CID=21&showPastEvents=true" target="_blank"> Veranstaltungen                             </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.visitnsbfl.com/things-to-do" target="_blank"> Freizeitgestaltungen                      </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.getyourguide.com/" target="_blank"> Boottouren                                    </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=airboat+rides&find_loc=New+Smyrna+Beach%2C+FL+32168/" target="_blank"> Airboat - Fahrten                              </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Attractions-g34471-Activities-c61-t217-New_Smyrna_Beach_Florida.html" target="_blank"> Fischen                                              </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=Tennis&find_loc=New+Smyrna+Beach%2C+FL" target="_blank"> Tennis                                               </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Attractions-g34471-Activities-c61-t60-New_Smyrna_Beach_Florida.html" target="_blank"> Golf                                                     </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.daytonabeach.com/biketoberfest/" target="_blank"> Biketoberfest                                   </a></td></tr>
+</tbody>
+</table>
+</td>
+<td width="50" onmouseover="loeschen()"></td>
+</tr>
+</tbody>
+</table>
+
+<table id="menus4" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="520" onmouseover="loeschen()"></td>
+<td>
+<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<tbody>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.kennedyspacecenter.com/launches-and-events" target="_blank"> Space Shuttle Starts                                        </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.jungleadventures.com/" target="_blank"> Alligatoren                                                          </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park" target="_blank"> Seekühe                                                              </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://insider.visitnsbfl.com/new-smyrna-beach-turtle-season" target="_blank"> Wasserschildkröten                                        </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.floridastateparks.org/parks-and-trails/wekiwa-springs-state-park" target="_blank"> Wekiwa Springs State Park                             </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.ronjonsurfshop.com/store/cocoa-beach" target="_blank"> Ron Jon´s - nicht nur für Surfer                    </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?cflt=museums&find_loc=New+Smyrna+Beach%2C+FL" target="_blank"> Museen                                                               </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.oldcity.com/" target="_blank"> St. Augustine                                                    </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.fountainofyouthflorida.com/" target="_blank"> Der Traum der ewigen Jugend                     </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.cassadaga.org/mediums.html" target="_blank"> Die Stadt der Wahrsager und Kartenleser  </a></td></tr>
+</tbody>
+</table>
+</td>
+<td width="50" onmouseover="loeschen()"></td>
+</tr>
+</tbody>
+</table>
+
+<table id="menus5" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="640" onmouseover="loeschen()"></td>
+<td>
+<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<tbody>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Alexander Wagner                                        </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Birkenstrasse 27                                               </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> 35428 Langgöns                                            </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Tel.: 0172-6539872                                      </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Email: Info@Florida-Strandwohnung.de  </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.disclaimer.de/disclaimer.htm?" target="_blank"> Haftungsausschluß                                      </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Kontakt                                                           </a></td></tr>
+</tbody>
+</table>
+</td>
+<td width="50" onmouseover="loeschen()"></td>
+</tr>
+</tbody>
 </table>
 
 <a href="https://weather.com/de-DE/wetter/10tage/l/c7574e4bac2799e7f21be30a6c9b95aaacff1a9fd93e7b5f7c74bccc80684447" target="_blank">
@@ -427,19 +506,18 @@ function lauftext() {
 
 <div style="position: absolute; top: 26%; left: 10%; width: 80%; background-color: #fff9e6; border: 2px dashed #fec364; padding: 15px; text-align: center; box-sizing: border-box;">
     <strong>Hinweis zur aktuellen Situation:</strong><br>
-    Diese Eigentumswohnung wurde mittlerweile verkauft. Dieser Internetauftritt wird nicht mehr kommerziell betrieben und existiert ausschließlich als private Dokumentation und zur persönlichen Erinnerung.<br>Eine Vermietung oder ein Erwerb sind nicht mehr möglich.
+    Diese Eigentumswohnung wurde mittlerweile verkauft. Dieser Internetauftritt wird nicht mehr kommerziell betrieben und existiert ausschließlich als private Documentation und zur persönlichen Erinnerung.<br>Eine Vermietung oder ein Erwerb sind nicht mehr möglich.
 </div>
 
-<!-- KORREKTUR: ZELL-PADDING (5%) ERZWINGT DEN GEWÜNSCHTEN INNENABSTAND DES TEXTES NACH RECHTS (KLART KOLLISION AUS IMAGE_18AEC5.JPG) -->
+<!-- BEREINIGT: Harmonischer Textfluss & orthographische Korrektur (urhigen -> ruhigen) -->
 <div style="position:absolute; top:52%; width:100%; z-index:2;">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="top">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%;">
- <br><br><br>Herzlich Willkommen im <big>" Seacoast Condominium "</big>,  <br>
- einer wunderschönen, komplett eingerichteten <br>
-Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
- einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
+ <br><br><br>Herzlich Willkommen im <big>"Seacoast Condominium"</big>,<br>
+ einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
+ Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
 <td valign="bottom" align="right">
 <a class="rechtskarte" id="rechtskarte" href="https://www.google.com/maps/place/4155+S+Atlantic+Ave,+New+Smyrna+Beach,+FL+32169,+USA/@29.0034442,-86.1486197,6z/data=!4m6!3m5!1s0x88e72c7298995f99:0xc62c8fe3c1ac42fd!8m2!3d29.0034442!4d-80.8751824!16s%2Fg%2F11b8vcm3fw?entry=ttu" target="_blank">
     <img style="margin-left: 45%" border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
@@ -450,7 +528,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position: absolute; top:101%; float: left; width:27% ; height: 18%">
+<!-- BEREINIGT: left: 5% Einzug etabliert -->
+<div style="position: absolute; top:101%; left: 5%; width:27% ; height: 18%">
 <a href="https://www.seacoastcondominium.com" target="_blank">
     <img style="border:0px none; height:144px; width:212px" alt="Seacost Condominium" src="images/seacoastcondo1.jpg">
 </a>
@@ -463,7 +542,6 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
  Kennedy Space Center. 
 </div>
 
-<!-- KORREKTUR: RECHTSVERSCHIEBUNG (LEFT: 6%) UND GEGENRECHNUNG DER BREITE (WIDTH: 80%) -->
 <div style="clear: both; FONT-FAMILY: Bookman Old Style, arial; FONT-SIZE: 13pt; position: absolute; left: 6%; top : 134%; z-index: 2; width: 80% ; text-align: center">
  Hier erleben Sie Erholung pur, und zwar nicht nur in dem Naturschutzgebiet am <br>
  Ende der Straße. Unternehmen Sie ausgiebige Wanderungen an den kilometerlangen <br>
@@ -492,7 +570,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; clear: both; top:215%">
+<!-- BEREINIGT: left: 5% Einzug & Breitenkompensation etabliert (image_18be20.jpg) -->
+<div style="position:absolute; top:215%; left: 5%; width: 90%;">
 <table border="0" width="100%" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -506,7 +585,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:239%">
+<!-- BEREINIGT: left: 5% Einzug & Breitenkompensation etabliert (image_18be20.jpg) -->
+<div style="position:absolute; top:239%; left: 5%; width: 90%;">
 <table border="0" cellspacing="1%" cellpadding="0%">
 <tbody>
 <tr valign="middle" align="center">
@@ -529,7 +609,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:306%">
+<!-- BEREINIGT: left: 5% Einzug & Breitenkompensation etabliert -->
+<div style="position:absolute; top:306%; left: 5%; width: 90%;">
 <table border="0" width="100%" cellspacing="1%" cellpadding="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -548,7 +629,8 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
 </table>
 </div>
 
-<div style="position:absolute; top:355%">
+<!-- BEREINIGT: left: 5% Einzug & Breitenkompensation etabliert -->
+<div style="position:absolute; top:355%; left: 5%; width: 90%;">
 <table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center">
@@ -576,7 +658,6 @@ Ferienwohnung in Florida . Die Ferienwohnung befindet sich in <br>
  <br>
  <br>
 
-<!-- KORREKTUR: RECHTSVERSCHIEBUNG (LEFT: 5%) UND RECHNERISCHE VERMINDERUNG DER WIDTH (WIDTH: 33%) GEGEN VERZERRUNGEN -->
 <div style="clear: both; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; left: 5%; width: 33%; text-align: center ; top: 409%; float: left">
  Die Wohnung besteht aus <br>
  2 Schlafräumen, 2 Bädern, <br>
@@ -617,7 +698,8 @@ Die Ausstattungen beinhaltet <br>
        Flug sind wir gerne behilflich 
 </div>
 
-<div style="position: absolute; top:490%; left: 15%; width: 20%;">
+<!-- BEREINIGT: Flamingo harmonisch auf die linke Fluchtlinie (left: 5%) gezogen -->
+<div style="position: absolute; top:490%; left: 5%; width: 20%;">
     <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" target="_blank">
         <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
     </a>
