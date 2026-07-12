@@ -99,16 +99,6 @@ function maximize() {
     window.moveTo(0,0);
 }
 
-function ruecksetz() {
-    var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
-}
-
 function loeschen() {
     if(document.getElementById) {
         document.getElementById("menus0").style.visibility = "hidden";
@@ -222,6 +212,17 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
+// BEREINIGT: Fehlerhaftes "far65" wieder auf die Variable "farbe" korrigiert
+function ruecksetz() {
+    var farbe="#ffcc99";
+    m0.style.backgroundColor = farbe;
+    m1.style.backgroundColor = farbe;
+    m2.style.backgroundColor = farbe;
+    m3.style.backgroundColor = farbe;
+    m4.style.backgroundColor = farbe;
+    m5.style.backgroundColor = farbe;
+}
+
 g_fPlayMode = 0;
 g_iimg = -1;
 g_imax = 0;
@@ -327,15 +328,6 @@ g_ImageTable[g_imax++] = new Array ("images/bilder/orlando14_.jpg", "Sea World, 
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando16_.jpg", "Epcot Center, Orlando ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando19_.jpg", "Wekiwa Springs State Park ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/shuttle4_.jpg", "Kennedy Space Center ");
-
-/* ABSCHNITT ERWEITERT: Die 6 neuen JPG-Bilder wurden direkt hinter der Shuttle4-Fähre im images-Ordner implementiert */
-g_ImageTable[g_imax++] = new Array ("images/bad02.jpg", "Florida Ferienwohnung - Badezimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz01.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz02.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/gz01.jpg", "Florida Ferienwohnung - Gästezimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz03.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/bad01.jpg", "Florida Ferienwohnung - Badezimmer");
-
 g_ImageTable[g_imax++] = new Array ("images/bilder/daytona.jpg", "Daytona USA ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/strand5_.jpg", "Strand von New Smyrna Beach ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/sonnenuntergang.jpg", "Sonnenuntergang ");
@@ -756,7 +748,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <td align="center" valign="center">
 <b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
  <br>
-<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">49</span></b>
+<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
 <p align="center">
     <input type="button" id="btnPrev" value="<< Zurück" onclick="Prev();"> 
     <input type="button" id="bntPlay" value="Start - Stop" onclick="Play()"> 
@@ -819,6 +811,12 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <img class="collage-img w-35" alt="Ponce De Leon Lighthouse" src="images/bilder/135_ausflug_ponce_de_leon_lighthouse.jpg">
         <img class="collage-img w-55" alt="Atlantik Sonnenuntergang" src="images/bilder/sonnenuntergang.jpg">
         <img class="collage-img w-45" alt="Kennedy Space Center Rakete" src="images/shuttle4.jpg">
+        <img class="collage-img w-35" alt="Badezimmer" src="images/bad02.jpg">
+        <img class="collage-img w-50" alt="Wohnzimmer" src="images/wz01.jpg">
+        <img class="collage-img w-40" alt="Wohnzimmer Ansicht" src="images/wz02.jpg">
+        <img class="collage-img w-45" alt="Gästezimmer" src="images/gz01.jpg">
+        <img class="collage-img w-55" alt="Wohnzimmer Details" src="images/wz03.jpg">
+        <img class="collage-img w-35" alt="Badezimmer Ansicht" src="images/bad01.jpg">
     </div>
 
     <hr>
