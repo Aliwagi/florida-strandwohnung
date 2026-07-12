@@ -50,7 +50,6 @@ a.email:active {color: black; font-family: arial, helvetica; font-size: 17pt; te
 a.preisliste:active {color: blue; font-family: arial, helvetica; font-size: 17pt; text-decoration: none}
 a:active {background-color:#ffffc0;}
 
-/* NEU: Flex-Container für die versetzte Bilder-Collage am Ende */
 .collage-container {
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +61,6 @@ a:active {background-color:#ffffc0;}
     padding: 20px 0;
 }
 
-/* NEU: Fotoalbum-Stil für die Collage */
 .collage-img {
     background: #ffffff;
     padding: 10px;
@@ -72,8 +70,6 @@ a:active {background-color:#ffffc0;}
     transition: transform 0.2s ease-in-out;
 }
 
-/* NEU: Unterschiedliche Größenklassen und Versatz (Rotation + Translation) */
-.w-30 { width: 28%; transform: rotate(-2.5deg) translateY(15px); }
 .w-35 { width: 33%; transform: rotate(3deg) translateY(-10px); }
 .w-40 { width: 38%; transform: rotate(-1.5deg) translateY(20px); }
 .w-45 { width: 43%; transform: rotate(2deg) translateY(-5px); }
@@ -85,7 +81,6 @@ a:active {background-color:#ffffc0;}
     z-index: 99;
 }
 
-/* NEU: Rechtlicher Disclaimer Formate */
 footer {
     font-size: 9.5pt;
     color: #333333;
@@ -482,7 +477,7 @@ function lauftext() {
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.visitnsbfl.com/things-to-do" target="_blank"> Freizeitgestaltungen                      </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.getyourguide.com/" target="_blank"> Boottouren                                    </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=airboat+rides&find_loc=New+Smyrna+Beach%2C+FL+32168/" target="_blank"> Airboat - Fahrten                              </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Attractions-g34471-Activities-c61-t217-New_Smyrna_Beach_Florida.html" target="_blank"> Fischen                                              </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Articles-g34471-Activities-c61-t217-New_Smyrna_Beach_Florida.html" target="_blank"> Fischen                                              </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=Tennis&find_loc=New+Smyrna+Beach%2C+FL" target="_blank"> Tennis                                               </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Attractions-g34471-Activities-c61-t60-New_Smyrna_Beach_Florida.html" target="_blank"> Golf                                                     </a></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.daytonabeach.com/biketoberfest/" target="_blank"> Biketoberfest                                   </a></td></tr>
@@ -625,26 +620,29 @@ function lauftext() {
 <tbody>
 <tr valign="middle" align="center">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center">
- New Smyrna Beach verfügt unter anderem über zahlreiche Golf- und Tennisplätze. </td>
+ New Smyrna Beach ist der ideale Standort, um die vielen Attraktionen in Zentral Florida zu besichtigen, <br>
+ ganz egal ob Sie nun Mickey Mouse im Disneyland, die Welt der Zukunft im Epcot Center, Sea World, <br>
+ die Filmstudios ( MGM / Universal ) oder aber einen Start der Weltraumfähre <br>
+ ( Columbia / Challenger / Discovery ) live erleben wollen. </td>
 </tr>
 </tbody>
 </table>
 </div>
 
 <div style="position:absolute; top:239%; left: 5%; width: 90%;">
-<table border="0" cellspacing="1%" cellpadding="0%">
+<table border="0" cellspacing="1%" cellpadding="0%" width="100%">
 <tbody>
 <tr valign="middle" align="center">
-<td style="margin-left: 10%; width:30% ;float: left ; z-index: 2">
+<td width="30%" style="margin-left: 10%; float: left ; z-index: 2">
 <a href="https://www.disneyworld.eu/" target="_blank">
     <img alt="Willkommen in Disneyland" border="0" height="186" width="167" src="images/disney.gif">
 </a>
 </td>
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; left: 1%; width: 62%; text-align: center ; z-index: 2 ;font-weight:500">
- Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
- Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
+<td width="70%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
+ Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.
+ Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen
  der ewigen Jugend in Ponce de Leon im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
- Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt<br>
+ Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt
  unter anderem über zahlreiche Golf- und Tennisplätze.
 </td>
 </tr>
@@ -751,7 +749,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <br>
 <br>
 <br>
-<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
+<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :br>
 <a class="email" id="email" href="kontakt.htm">Info@Florida-Strandwohnung.de.</a></p>
 </center>
 </div>
@@ -828,7 +826,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </form>
 </div>
 
-<!-- CONTAINER FÜR COLLAGE, DISCLAIMER UND IMPRESSUM IM FOTOALBUM-STIL -->
 <div style="position: absolute; top: 853%; left: 5%; width: 90%; color: black; padding-bottom: 80px; text-align: initial;">
     
     <div class="collage-container">
@@ -856,7 +853,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Onlineangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Urheberrecht für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
 
         <p><strong>4. Rechtswirksamkeit dieses Haftungsausschlusses</strong><br>
-        Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+        Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
     <!-- Beginn Minimal-Impressum für private Archivseite -->
@@ -873,8 +870,8 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Kontakt E-Mail: archiv@florida-strandwohnung.de
         </p>
         <p style="font-size: 10px; font-weight: normal; font-style: italic; color: #999; margin: 10px 0 0 0; max-width: 100%; line-height: 1.4;">
-            Hinweis: Die geschäftsmäßige Nutzung dieser Website (Ferienwohnungsvermietung) wurde dauerhaft eingestellt. <br>
-            Das flux veräußerte Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
+            Hinweis: Die geschäftsmäßige Nutzung dieser Website (Ferienwohnungsvermietung) wurde dauerhaft eingestellt. <br> 
+            Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
     <!-- Ende Minimal-Impressum -->
