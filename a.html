@@ -31,7 +31,6 @@ table.menus {position:absolute; top:20px;left:0px;z-index:5;font-weight:bold;fon
 table.menuleiste {font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
 table.weiteremenus {border:2px solid #cccccc; font-weight:bold ;font-family:arial,helvetica;font-size:8pt;background-color:#ffffc0}
 
-/* KORREKTUR: CSS auf span-Elemente übertragen, um die Optik exakt zu erhalten */
 .email {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .preisliste {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .menu-link {color:black; font-size:8pt; font-family:arial, helvetica; text-decoration:none; display: block; width: 100%; cursor: default;}
@@ -98,6 +97,17 @@ footer h3 {
 function maximize() {
     window.resizeTo(screen.availWidth, screen.availHeight);
     window.moveTo(0,0);
+}
+
+// BEREINIGT: Fehlerhaftes "far65" im vorherigen Code auf "farbe" zurückgesetzt
+function ruecksetz() {
+    var farbe="#ffcc99";
+    m0.style.backgroundColor = farbe;
+    m1.style.backgroundColor = farbe;
+    m2.style.backgroundColor = farbe;
+    m3.style.backgroundColor = farbe;
+    m4.style.backgroundColor = farbe;
+    m5.style.backgroundColor = farbe;
 }
 
 function loeschen() {
@@ -213,16 +223,6 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
-function ruecksetz() {
-    var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
-}
-
 g_fPlayMode = 0;
 g_iimg = -1;
 g_imax = 0;
@@ -317,6 +317,7 @@ g_ImageTable[g_imax++] = new Array ("images/bilder/150_ausflug_daytona_003.jpg",
 g_ImageTable[g_imax++] = new Array ("images/bilder/155_ausflug_orlando_001.jpg", "Florida Strandwohnung - New Smyrna Beach");
 g_ImageTable[g_imax++] = new Array ("images/bilder/165_ausflug_orlando_002.jpg", "Florida Strandwohnung - New Smyrna Beach");
 g_ImageTable[g_imax++] = new Array ("images/bilder/180_ausflug_blanchard_park_orlando_003.jpg", "Blanchard Park Orlando");
+g_ImageTable[g_imax++] = new Array ("images/bilder/alligators4_.jpg", "Alligator Farm, Christmas"); // NEU: Alligator-Bild erfolgreich zwischengeschaltet
 g_ImageTable[g_imax++] = new Array ("images/bilder/185_ausflug_bluesprings_001.jpg", "Blue Springs");
 g_ImageTable[g_imax++] = new Array ("images/bilder/190_ausflug_bluesprings_002.jpg", "Blue Springs");
 g_ImageTable[g_imax++] = new Array ("images/bilder/205_ausflug_bluesprings_005.jpg", "Blue Springs");
@@ -650,7 +651,7 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:355%; left: 5%; width: 90%;">
-<table border="0" width="100%">
+<table border="0" cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center">
 <td style="margin-left: 10%; width:30% ;float: left ; z-index: 2">
@@ -747,7 +748,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <td align="center" valign="center">
 <b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
  <br>
-<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
+<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">43</span></b>
 <p align="center">
     <input type="button" id="btnPrev" value="<< Zurück" onclick="Prev();"> 
     <input type="button" id="bntPlay" value="Start - Stop" onclick="Play()"> 
@@ -830,6 +831,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
+    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
@@ -847,7 +849,9 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    </div>
+    <!-- Ende Minimal-Impressum -->
+
+</div>
 
 </body>
 </html>
