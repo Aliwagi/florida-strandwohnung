@@ -83,7 +83,6 @@ footer {
     font-weight: normal;
     line-height: 1.5;
 }
-/* KORREKTUR: h3 Selektor auf h2 angepasst für fehlerfreie W3C-Hierarchie */
 footer h2 {
     text-align: center;
     font-size: 12pt;
@@ -242,7 +241,6 @@ function getobject(obj){
     else if (document.all) return document.all[obj];
 }
 
-/* KORREKTUR: Fehlendes alt-Attribut beim Diashow-Bild ergänzt */
 function Update(){
     getobject("_Ath_Slide" ).src = g_ImageTable[g_iimg][0];
     getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1];
@@ -538,7 +536,7 @@ function lauftext() {
 
 <img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
 
-<div style="background-color: #fec364; border-bottom-style: outset; BORDER-LEFT-STYLE: outset; BORDER-RIGHT-STYLE: outset; BORDER-TOP-STYLE: outset; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 25pt; left:5%;right: 5%; POSITION: absolute; TEXT-ALIGN: center; TOP: 15%; WIDTH: 90%; align: center">
+<div style="background-color: #fec364; border-bottom-style: outset; BORDER-LEFT-STYLE: outset; BORDER-RIGHT-STYLE: outset; BORDER-TOP-STYLE: outset; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 25pt; left:5%;right: 5%; POSITION: absolute; TEXT-ALIGN: center; TOP: 15%; WIDTH: 90%;">
  Apartment direkt am Strand von New Smyrna Beach 
 </div>
 
@@ -552,7 +550,7 @@ function lauftext() {
 <tbody>
 <tr valign="top">
 <td width="55%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%;">
- <br><br><br>Herzlich Willkommen im <big>"Seacoast Condominium"</big>,<br>
+ <br><br><br>Herzlich Willkommen im <span style="font-size: larger;">"Seacoast Condominium"</span>,<br>
  einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
  Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
 <td width="45%" valign="bottom" align="right" style="padding-right: 5%;">
@@ -582,13 +580,13 @@ function lauftext() {
  die atemberaubenden Sonnenuntergänge. <br>
 </div>
 
-<div style="clear: both; FONT-FAMILY: arial,Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:158%; WIDTH: 80%; align: center; left-margin:2.5%; right-margin: 7.5%;left:2.5%; right: 7.5%; z-index: 2">
+<div style="clear: both; FONT-FAMILY: arial,Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:158%; WIDTH: 80%; text-align: center; margin-left:2.5%; margin-right: 7.5%; left:2.5%; right: 7.5%; z-index: 2">
 <form id="tickform" name="tickform">
-<center><b><input id="tickfeld" name="tickfeld" size="100"></b></center>
+<b><input id="tickfeld" name="tickfeld" size="100"></b>
 </form>
 </div>
 
-<div style="position:absolute; top:165% ;align:center; text-align:center;  left: 10%; right: 10%">
+<div style="position:absolute; top:165% ; text-align:center;  left: 10%; right: 10%">
 <table width="100%" border="0"  cellpadding="1%" cellspacing="1%">
 <tbody>
 <tr valign="middle" align="center"> 
@@ -605,7 +603,7 @@ function lauftext() {
 <tbody>
 <tr valign="middle" align="center">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center">
- New Smyrna Beach ist der ideale Standort, um die vielen Attraktionen in Zentral Florida zu besichtigen, <br>
+ New Smyrna Beach ist der ideale Standort, um die many Attraktionen in Zentral Florida zu besichtigen, <br>
  ganz egal ob Sie nun Mickey Mouse im Disneyland, die Welt der Zukunft im Epcot Center, Sea World, <br>
  die Filmstudios ( MGM / Universal ) oder aber einen Start der Weltraumfähre <br>
  ( Columbia / Challenger / Discovery ) live erleben wollen. </td>
@@ -805,7 +803,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <img class="collage-img w-35" alt="Ponce De Leon Lighthouse" src="images/bilder/135_ausflug_ponce_de_leon_lighthouse.jpg">
         <img class="collage-img w-55" alt="Atlantik Sonnenuntergang" src="images/bilder/sonnenuntergang.jpg">
         <img class="collage-img w-45" alt="Kennedy Space Center Rakete" src="images/shuttle4.jpg">
-        <img class="collage-img w-35" alt="Badezimmer" src="images/bad02.jpg">
         <img class="collage-img w-50" alt="Wohnzimmer" src="images/wz01.jpg">
         <img class="collage-img w-40" alt="Wohnzimmer Ansicht" src="images/wz02.jpg">
         <img class="collage-img w-45" alt="Gästezimmer" src="images/gz01.jpg">
