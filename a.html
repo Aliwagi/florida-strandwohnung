@@ -31,6 +31,7 @@ table.menus {position:absolute; top:20px;left:0px;z-index:5;font-weight:bold;fon
 table.menuleiste {font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
 table.weiteremenus {border:2px solid #cccccc; font-weight:bold ;font-family:arial,helvetica;font-size:8pt;background-color:#ffffc0}
 
+/* KORREKTUR: CSS auf span-Elemente übertragen, um die Optik exakt zu erhalten */
 .email {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .preisliste {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .menu-link {color:black; font-size:8pt; font-family:arial, helvetica; text-decoration:none; display: block; width: 100%; cursor: default;}
@@ -212,7 +213,6 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
-// BEREINIGT: Fehlerhaftes "far65" wieder auf die Variable "farbe" korrigiert
 function ruecksetz() {
     var farbe="#ffcc99";
     m0.style.backgroundColor = farbe;
@@ -623,7 +623,7 @@ function lauftext() {
 </td>
 <td width="70%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
  Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
- Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
+ Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen
  der ewigen Jugend in Ponce de Leon im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
  Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt<br>
  unter anderem über zahlreiche Golf- und Tennisplätze.
@@ -811,12 +811,12 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <img class="collage-img w-35" alt="Ponce De Leon Lighthouse" src="images/bilder/135_ausflug_ponce_de_leon_lighthouse.jpg">
         <img class="collage-img w-55" alt="Atlantik Sonnenuntergang" src="images/bilder/sonnenuntergang.jpg">
         <img class="collage-img w-45" alt="Kennedy Space Center Rakete" src="images/shuttle4.jpg">
-        <img class="collage-img w-35" alt="Badezimmer" src="images/bad02.jpg">
         <img class="collage-img w-50" alt="Wohnzimmer" src="images/wz01.jpg">
         <img class="collage-img w-40" alt="Wohnzimmer Ansicht" src="images/wz02.jpg">
         <img class="collage-img w-45" alt="Gästezimmer" src="images/gz01.jpg">
         <img class="collage-img w-55" alt="Wohnzimmer Details" src="images/wz03.jpg">
         <img class="collage-img w-35" alt="Badezimmer Ansicht" src="images/bad01.jpg">
+        <img class="collage-img w-35" alt="Badezimmer Ansicht" src="images/bad02.jpg">
     </div>
 
     <hr>
