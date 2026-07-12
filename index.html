@@ -30,25 +30,19 @@ div {font-family: arial, bookman old style, fantasy; font-size: 13pt}
 table.menus {position:absolute; top:20px;left:0px;z-index:5;font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
 table.menuleiste {font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
 table.weiteremenus {border:2px solid #cccccc; font-weight:bold ;font-family:arial,helvetica;font-size:8pt;background-color:#ffffc0}
-a.email:link {color: blue; font-family:  helvetica, arial; font-size: 17pt; text-decoration:none}
-a.preisliste:link {color: blue; font-family:  helvetica, arial; font-size: 17pt; text-decoration:none}
-a:link {color:black;font-size:8pt;font-family:arial, helvetica;text-decoration:none;}
-table a:link {color:black;font-size:8pt;}
-a.email:visited {background-color: #f8a284; color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none}
-a.preisliste:visited {background-color: #f8a284; color: blue; font-family: arial, helvetica; font-size: 17pt; text-decoration: none}
-a.rechtskarte:visited {background-color:transparent}
-a:visited {color:black;font-family:arial, helvetica;text-decoration:none;}
-table a:visited {background-color:transparent;color:blue;font-size:8pt;}
-table.weiteremenus a:visited {font-size:8pt;background-color:#ffcc99;color:black}
-a.email:hover { background-color: #f8a284; color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none}
-a.preisliste:hover {background-color: #f8a284; color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none; width: 85px}
-a:hover {color:#000000;font-family:arial, helvetica;text-decoration:none;}
-table.menus a:hover {background-color:#ff0000;color:#ffffff;}
-table.menuleiste a:hover {color:#ff0000;background-color:#ffcc99;}
-table.weiteremenus a:hover {color:#ffffff;background-color:#ff0000;}
-a.email:active {color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none}
-a.preisliste:active {color: blue; font-family: arial, helvetica; font-size: 17pt; text-decoration: none}
-a:active {background-color:#ffffc0;}
+
+/* KORREKTUR: CSS auf span-Elemente übertragen, um die Optik exakt zu erhalten */
+.email {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
+.preisliste {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
+.menu-link {color:black; font-size:8pt; font-family:arial, helvetica; text-decoration:none; display: block; width: 100%; cursor: default;}
+table .menu-link {color:black; font-size:8pt;}
+
+.email:hover { background-color: #f8a284; color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none}
+.preisliste:hover {background-color: #f8a284; color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none; width: 85px}
+.menu-link:hover {color:#000000; font-family:arial, helvetica; text-decoration:none;}
+table.menus .menu-link:hover {background-color:#ff0000; color:#ffffff;}
+table.menuleiste .menu-link:hover {color:#ff0000; background-color:#ffcc99;}
+table.weiteremenus .menu-link:hover {color:#ffffff; background-color:#ff0000;}
 
 .collage-container {
     display: flex;
@@ -388,12 +382,12 @@ function lauftext() {
 <table id="menutab" class="menuleiste" bgcolor="#FFFFC0" cellpadding="0" cellspacing="0" style="border:2px solid #cccccc;">
 <tbody>
 <tr>
-<td onmouseover="rein(this)" id="m0" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus0()"> Wichtige Infos </a></td>
-<td onmouseover="rein(this)" id="m1" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus1()">  Florida / New Smyrna Beach   </a></td>
-<td onmouseover="rein(this)" id="m2" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus2()"> Reiseinformationen </a></td>
-<td onmouseover="rein(this)" id="m3" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus3()">  Freizeit / Unterhaltung  </a></td>
-<td onmouseover="rein(this)" id="m4" style="border-right:2px solid #cccccc;"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus4()"> Sehenswertes </a></td>
-<td onmouseover="rein(this)" id="m5"><a href="#pseudo" onfocus="this.blur()" onmouseover="overmenus5()"> Kontakt </a></td>
+<td onmouseover="rein(this)" id="m0" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus0()"> Wichtige Infos </span></td>
+<td onmouseover="rein(this)" id="m1" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus1()">  Florida / New Smyrna Beach   </span></td>
+<td onmouseover="rein(this)" id="m2" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus2()"> Reiseinformationen </span></td>
+<td onmouseover="rein(this)" id="m3" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus3()">  Freizeit / Unterhaltung  </span></td>
+<td onmouseover="rein(this)" id="m4" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus4()"> Sehenswertes </span></td>
+<td onmouseover="rein(this)" id="m5"><span class="menu-link" onmouseover="overmenus5()"> Kontakt </span></td>
 </tr>
 </tbody>
 </table>
@@ -406,10 +400,10 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="termine.htm"> Belegungsplan                  </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="preise.htm"> Preisliste                           </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="bilder.htm"> Bilder                                  </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="hausordnung.htm" target="_blank"> Hausordnung                    </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Belegungsplan                  </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Preisliste                           </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Bilder                                  </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Hausordnung                    </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -425,12 +419,12 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.seacoastcondominium.com" target="_blank"> Seacoast Condominium Homepage                  </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.volusia.com/explore-a-city/new-smyrna-beach/" target="_blank"> New Smyrna Beach Info Seiten                         </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://worldcams.tv/united-states/new-smyrna-beach" target="_blank"> Aktuelle Bilder vom Strand                                 </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://eu.news-journalonline.com/news/local/" target="_blank"> Beach News - Neuigkeiten vom Strand            </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.usembassy.de" target="_blank"> US-Botschaften und Konsulate                           </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.germany.info/us-de/botschaft-konsulate/gkmiami" target="_blank"> Baltimore Generalkonsulat Miami                          </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Seacoast Condominium Homepage                  </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> New Smyrna Beach Info Seiten                         </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Aktuelle Bilder vom Strand                                 </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Beach News - Neuigkeiten vom Strand            </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> US-Botschaften und Konsulate                           </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Baltimore Generalkonsulat Miami                          </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -446,14 +440,14 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.google.com/maps/place/4155+S+Atlantic+Ave,+New+Smyrna+Beach,+FL+32169,+USA/@29.0034442,-80.8777573,17z/data=!3m1!4b1!4m6!3m5!1s0x88e72c7298995f99:0xc62c8fe3c1ac42fd!8m2!3d29.0034442!4d-80.8751824!16s%2Fg%2F11b8vcm3fw?entry=ttu" target="_blank"> Routenplaner - Einfach Start- und Zielort eingeben   </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.zillow.com/homedetails/4155-S+Atlantic+Ave-APT-210-New-Smyrna+Beach-FL-32169/48080082_zpid/"> Zillow.com                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.google.de/search?q=hospital+new+smyrna+beach" target="_blank"> Krankenhaus - Medical Center                                                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://weather.com/de-DE/wetter/10tage/l/c7574e4bac2799e7f21be30a6c9b95aaacff1a9fd93e7b5f7c74bccc80684447" target="_blank"> Wettervorhersage                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Restaurants-g34471-New_Smyrna_Beach_Florida.html" target="_blank"> Restaurants in der Umgebung                                       </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.floridaguru.de/florida-reisetipps/" target="_blank"> Florida Reisetipps                                            </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.frankfurt-airport.com/de.html" target="_blank"> Flughafen Frankfurt                                           </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.orlandoairports.net/" target="_blank"> Flughafen Orlando                                             </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Routenplaner - Einfach Start- und Zielort eingeben   </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Zillow.com                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Krankenhaus - Medical Center                                                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Wettervorhersage                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Restaurants in der Umgebung                                       </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Florida Reisetipps                                            </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Flughafen Frankfurt                                           </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Flughafen Orlando                                             </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -469,18 +463,18 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.disney.de/" target="_blank"> Disneyworld                                     </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://seaworld.com/orlando/" target="_blank"> Seaworld                                           </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.universalorlando.com/" target="_blank"> Universal Studios                            </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.volusia.com/explore-a-city/new-smyrna-beach/" target="_blank"> Unterhaltung in New Smyrna        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.cityofnsb.com/calendar.aspx?CID=21&showPastEvents=true" target="_blank"> Veranstaltungen                             </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.visitnsbfl.com/things-to-do" target="_blank"> Freizeitgestaltungen                      </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.getyourguide.com/" target="_blank"> Boottouren                                    </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=airboat+rides&find_loc=New+Smyrna+Beach%2C+FL+32168/" target="_blank"> Airboat - Fahrten                              </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Articles-g34471-Activities-c61-t217-New_Smyrna_Beach_Florida.html" target="_blank"> Fischen                                              </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?find_desc=Tennis&find_loc=New+Smyrna+Beach%2C+FL" target="_blank"> Tennis                                               </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.tripadvisor.com/Attractions-g34471-Activities-c61-t60-New_Smyrna_Beach_Florida.html" target="_blank"> Golf                                                     </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.daytonabeach.com/biketoberfest/" target="_blank"> Biketoberfest                                   </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Disneyworld                                     </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><a class="menu-link"> Seaworld                                           </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Universal Studios                            </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Unterhaltung in New Smyrna        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Veranstaltungen                             </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Freizeitgestaltungen                      </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Boottouren                                    </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Airboat - Fahrten                              </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Fischen                                              </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Tennis                                               </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Golf                                                     </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Biketoberfest                                   </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -496,16 +490,16 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.kennedyspacecenter.com/launches-and-events" target="_blank"> Space Shuttle Starts                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.jungleadventures.com/" target="_blank"> Alligatoren                                                          </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.floridastateparks.org/parks-and-trails/blue-spring-state-park" target="_blank"> Seekühe                                                              </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://insider.visitnsbfl.com/new-smyrna-beach-turtle-season" target="_blank"> Wasserschildkröten                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.floridastateparks.org/parks-and-trails/wekiwa-springs-state-park" target="_blank"> Wekiwa Springs State Park                             </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.ronjonsurfshop.com/store/cocoa-beach" target="_blank"> Ron Jon´s - nicht nur für Surfer                    </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.yelp.com/search?cflt=museums&find_loc=New+Smyrna+Beach%2C+FL" target="_blank"> Museen                                                               </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.oldcity.com/" target="_blank"> St. Augustine                                                    </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.fountainofyouthflorida.com/" target="_blank"> Der Traum der ewigen Jugend                     </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.cassadaga.org/mediums.html" target="_blank"> Die Stadt der Wahrsager und Kartenleser  </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Space Shuttle Starts                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Alligatoren                                                          </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Seekühe                                                               Rhodesia </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Wasserschildkröten                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Wekiwa Springs State Park                             </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Ron Jon´s - nicht nur für Surfer                    </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Museen                                                               </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> St. Augustine                                                    </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Der Traum der ewigen Jugend                     </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Die Stadt der Wahrsager und Kartenleser  </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -521,13 +515,13 @@ function lauftext() {
 <td>
 <table class="weiteremenus" cellpadding="0" cellspacing="0">
 <tbody>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Alexander Wagner                                        </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Birkenstrasse 27                                               </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> 35428 Langgöns                                            </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Tel.: 0172-6539872                                      </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Email: Info@Florida-Strandwohnung.de  </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="https://www.disclaimer.de/disclaimer.htm?" target="_blank"> Haftungsausschluß                                      </a></td></tr>
-<tr><td style="border-bottom:2px solid #cccccc;"><a href="kontakt.htm"> Kontakt                                                           </a></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Alexander Wagner                                        </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Birkenstrasse 27                                               </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> 35428 Langgöns                                            </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Tel.: 0172-6539872                                      </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Email: Info@Florida-Strandwohnung.de  </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Haftungsausschluß                                      </span></td></tr>
+<tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Kontakt                                                           </span></td></tr>
 </tbody>
 </table>
 </td>
@@ -536,16 +530,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<a href="https://weather.com/de-DE/wetter/10tage/l/c7574e4bac2799e7f21be30a6c9b95aaacff1a9fd93e7b5f7c74bccc80684447" target="_blank">
-    <img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
-</a> 
+<img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
 
 <div style="color: #955af4; position: absolute; top: 2.5%; left:155px; z-index: 2; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 <div style="color: silver; position: absolute; top: 2.9%; left: 157px; z-index:1; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 
-<a href="https://weather.com/de-DE/wetter/10tage/l/c7574e4bac2799e7f21be30a6c9b95aaacff1a9fd93e7b5f7c74bccc80684447" target="_blank">
-    <img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
-</a> 
+<img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
 
 <div style="background-color: #fec364; border-bottom-style: outset; BORDER-LEFT-STYLE: outset; BORDER-RIGHT-STYLE: outset; BORDER-TOP-STYLE: outset; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 25pt; left:5%;right: 5%; POSITION: absolute; TEXT-ALIGN: center; TOP: 15%; WIDTH: 90%; align: center">
  Apartment direkt am Strand von New Smyrna Beach 
@@ -565,9 +555,7 @@ function lauftext() {
  einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
  Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
 <td width="45%" valign="bottom" align="right" style="padding-right: 5%;">
-<a class="rechtskarte" id="rechtskarte" href="https://www.google.com/maps/place/4155+S+Atlantic+Ave,+New+Smyrna+Beach,+FL+32169,+USA/@29.0034442,-86.1486197,6z/data=!4m6!3m5!1s0x88e72c7298995f99:0xc62c8fe3c1ac42fd!8m2+3d29.0034442!4d-80.8751824!16s%2Fg%2F11b8vcm3fw?entry=ttu" target="_blank">
-    <img border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
-</a>
+    <img id="rechtskarte" border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
 </td>
 </tr>
 </tbody>
@@ -575,9 +563,7 @@ function lauftext() {
 </div>
 
 <div style="position: absolute; top:101%; left: 5%; width:27% ; height: 18%">
-<a href="https://www.seacoastcondominium.com" target="_blank">
     <img style="border:0px none; height:144px; width:212px" alt="Seacost Condominium" src="images/seacoastcondo1.jpg">
-</a>
 </div>
 
 <div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position:absolute; left:250px; top: 109%; z-index: 2; width: 55% ; text-align: center">
@@ -606,9 +592,7 @@ function lauftext() {
 <tbody>
 <tr valign="middle" align="center"> 
 <td style="clear: both; z-index: 2">
-<a href="https://worldcams.tv/united-states/new-smyrna-beach" target="_blank">
     <img align="middle" alt="aktuelle Bilder von der Strandkamera in New Smyrna Beach" border="0" src="images/strand_neu.jpg" width="1000" height="269">
-</a>
 </td>
 </tr>
 </tbody>
@@ -634,15 +618,13 @@ function lauftext() {
 <tbody>
 <tr valign="middle" align="center">
 <td width="30%" style="margin-left: 10%; float: left ; z-index: 2">
-<a href="https://www.disneyworld.eu/" target="_blank">
     <img alt="Willkommen in Disneyland" border="0" height="186" width="167" src="images/disney.gif">
-</a>
 </td>
 <td width="70%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
- Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.
- Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen
+ Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
+ Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
  der ewigen Jugend in Ponce de Leon im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
- Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt
+ Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt<br>
  unter anderem über zahlreiche Golf- und Tennisplätze.
 </td>
 </tr>
@@ -660,9 +642,7 @@ function lauftext() {
  Ebenso können Sie sich bei dem dort ansässigen Friseur oder Nagelstudio verwöhnen lassen.
 </td>
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 55%; text-align: center ; z-index: 2 ;font-weight:500">
-<a href="https://www.jungleadventures.com/" target="_blank">
     <img alt="das ist die neue Kueche !!!" border="0" src="images/kueche_neu.jpg" width="550" height="266">
-</a>
 </td>
 </tr>
 </tbody>
@@ -670,7 +650,7 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:355%; left: 5%; width: 90%;">
-<table border="0" cellpadding="1%" cellspacing="1%">
+<table border="0" width="100%">
 <tbody>
 <tr valign="middle" align="center">
 <td style="margin-left: 10%; width:30% ;float: left ; z-index: 2">
@@ -724,14 +704,12 @@ Die komplette Wohnung gibt es schon ab ca. 130,- EUR pro Tag.
 (Monatspreis in der Nebensaison umgerechnet auf Tagesbasis
 bei einem USD-Kurs von 1,10). <br> Darin sind bereits alle Kosten
 wie Steuern oder Endreinigung enthalten.<br><br>
-Eine genaue Übersicht finden Sie in der <a class="preisliste" href="preise.htm" style="font-size: 17pt; font-weight: bold; text-decoration: underline; color: blue;">Preisliste</a>.<br><br>
+Eine genaue Übersicht finden Sie in der <span class="preisliste" style="font-size: 17pt; font-weight: bold; text-decoration: underline; color: blue;">Preisliste</span>.<br><br>
 Bei der Suche nach einem günstigen Flug sind wir gerne behilflich.
 </div>
 
 <div style="position: absolute; top:490%; left: 5%; width: 20%;">
-    <a href="https://seaworld.com/orlando/animal-experiences/flamingo-cove/" target="_blank">
-        <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
-    </a>
+    <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
 </div>
 
 <div style="position: absolute; top:575%; left: 10%; right: 30%">
@@ -750,7 +728,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <br>
 <br>
 <p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
-<a class="email" id="email" href="kontakt.htm">Info@Florida-Strandwohnung.de.</a></p>
+<span class="email" id="email">Info@Florida-Strandwohnung.de.</span></p>
 </center>
 </div>
 
@@ -789,15 +767,11 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
 <tr>
 <td width="33%" align="middle" rowspan="6">
-<a href="https://www.kennedyspacecenter.com/launches-and-events" target="_blank">
     <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
-</a> 
 </td>
 <td width="33%" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
 <td width="33%" align="middle" rowspan="6">
-<a href="https://www.kennedyspacecenter.com/launches-and-events" target="_blank">
     <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
-</a> 
 </td>
 </tr>
 <tr><td> </td><td> </td><td> </td></tr>
@@ -841,7 +815,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
     <hr>
 
     <footer>
-        <h3>Rechtliche Hinweise &amp; Haftungsausschluss (Disclaimer)</h3>
+        <h3>Rechtliche Hinweise & Haftungsausschluss (Disclaimer)</h3>
         
         <p><strong>1. Inhalt des Onlineangebotes</strong><br>
         Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
@@ -850,20 +824,19 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Sämtliche direkte oder indirekte Verweise auf fremde Webseiten ("Hyperlinks") wurden von dieser Webseite entfernt, um eine Haftung für fremde Inhalte vollständig auszuschließen. Sollten im Fließtext oder in Bildbeschreibungen noch unbeabsichtigte textliche Nennungen von Domainnamen existieren, stellen diese keine Verlinkung und keine Empfehlung dar. Für die Inhalte dieser externen Archive oder Anbieter sind ausschließlich deren Betreiber verantwortlich.</p>
 
         <p><strong>3. Urheber- und Kennzeichenrecht</strong><br>
-        Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Onlineangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Urheberrecht für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
+        Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Onlineangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Urheberrecht für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen is ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
 
         <p><strong>4. Rechtswirksamkeit dieses Haftungsausschlusses</strong><br>
         Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
-    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
         <p style="font-size: 11px; font-weight: normal; color: #666; margin: 0; max-width: 100%;">
             Alexander Wagner<br>
             Birkenstr. 27<br>
-            35428 Langg&ouml;ns<br>
+            35428 Langgöns<br>
             Deutschland
         </p>
         <p style="font-size: 11px; font-weight: normal; color: #666; margin: 5px 0 0 0; max-width: 100%;">
@@ -874,9 +847,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    <!-- Ende Minimal-Impressum -->
-
-</div>
+    </div>
 
 </body>
 </html>
