@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<meta http-equiv="expires" content="0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="ROBOTS" content="follow,index">
 <meta name="Description" content="Verbringen Sie einen wunderschönen Urlaub in einem Apartment direkt am Strand von New Smyrna Beach, Florida. New Smyrna liegt zwischen Daytona Beach und Kennedy Space Center, unweit von Orlando">
@@ -30,6 +31,7 @@ table.menus {position:absolute; top:20px;left:0px;z-index:5;font-weight:bold;fon
 table.menuleiste {font-weight:bold;font-family:arial,helvetica;font-size:8pt;}
 table.weiteremenus {border:2px solid #cccccc; font-weight:bold ;font-family:arial,helvetica;font-size:8pt;background-color:#ffffc0}
 
+/* KORREKTUR: CSS auf span-Elemente übertragen, um die Optik exakt zu erhalten */
 .email {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .preisliste {color: blue; font-family: helvetica, arial; font-size: 17pt; text-decoration:none;}
 .menu-link {color:black; font-size:8pt; font-family:arial, helvetica; text-decoration:none; display: block; width: 100%; cursor: default;}
@@ -83,7 +85,8 @@ footer {
     font-weight: normal;
     line-height: 1.5;
 }
-footer h3 {
+/* KORREKTUR: h3 Selektor auf h2 geändert um das Erscheinungsbild identisch zu wahren */
+footer h2 {
     text-align: center;
     font-size: 12pt;
     font-family: Arial, sans-serif;
@@ -96,17 +99,6 @@ footer h3 {
 function maximize() {
     window.resizeTo(screen.availWidth, screen.availHeight);
     window.moveTo(0,0);
-}
-
-// BEREINIGT: Fehlerhaftes "far65" im vorherigen Code auf "farbe" zurückgesetzt
-function ruecksetz() {
-    var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
 }
 
 function loeschen() {
@@ -222,6 +214,16 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
+function ruecksetz() {
+    var farbe="#ffcc99";
+    m0.style.backgroundColor = farbe;
+    m1.style.backgroundColor = farbe;
+    m2.style.backgroundColor = farbe;
+    m3.style.backgroundColor = farbe;
+    m4.style.backgroundColor = farbe;
+    m5.style.backgroundColor = farbe;
+}
+
 g_fPlayMode = 0;
 g_iimg = -1;
 g_imax = 0;
@@ -237,6 +239,7 @@ function ChangeImage(fFwd) {
     Update();
 }
 
+// BEREINIGT: Ein doppelter getobject-Eintrag aus dem Originalcode entfernt
 function getobject(obj){
     if (document.getElementById) return document.getElementById(obj);
     else if (document.all) return document.all[obj];
@@ -327,14 +330,6 @@ g_ImageTable[g_imax++] = new Array ("images/bilder/orlando14_.jpg", "Sea World, 
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando16_.jpg", "Epcot Center, Orlando ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando19_.jpg", "Wekiwa Springs State Park ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/shuttle4_.jpg", "Kennedy Space Center ");
-
-g_ImageTable[g_imax++] = new Array ("images/bad02.jpg", "Florida Ferienwohnung - Badezimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz01.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz02.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/gz01.jpg", "Florida Ferienwohnung - Gästezimmer");
-g_ImageTable[g_imax++] = new Array ("images/wz03.jpg", "Florida Ferienwohnung - Wohnzimmer");
-g_ImageTable[g_imax++] = new Array ("images/bad01.jpg", "Florida Ferienwohnung - Badezimmer");
-
 g_ImageTable[g_imax++] = new Array ("images/bilder/daytona.jpg", "Daytona USA ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/strand5_.jpg", "Strand von New Smyrna Beach ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/sonnenuntergang.jpg", "Sonnenuntergang ");
@@ -769,7 +764,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <p> </p>
 </div>
 
-<div style="position: absolute; top:793%; text-align:center; align:center; left: 10%; right: 10%">
+<div style="position: absolute; top:793%; text-align:center; left: 10%; right: 10%">
 <form id="tafel" name="tafel" style="text-align:center">
 <fieldset style="background-color:#DDEEFF">
 <table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
@@ -810,7 +805,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 
 <div style="position: absolute; top: 853%; left: 5%; width: 90%; color: black; padding-bottom: 80px; text-align: initial;">
     
-    <!-- KORREKTUR: bad02.jpg erfolgreich wieder an das absolute Ende des Containers angefügt -->
     <div class="collage-container">
         <img class="collage-img w-45" alt="Aussicht vom Balkon" src="images/bilder/001_condo_balkon_001.jpg">
         <img class="collage-img w-35" alt="Swimming Pool Anlage" src="images/bilder/condo8_.jpg">
@@ -831,7 +825,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
     <hr>
 
     <footer>
-        <h3>Rechtliche Hinweise & Haftungsausschluss (Disclaimer)</h3>
+        <h2>Rechtliche Hinweise & Haftungsausschluss (Disclaimer)</h2>
         
         <p><strong>1. Inhalt des Onlineangebotes</strong><br>
         Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
@@ -846,7 +840,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
-    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
@@ -864,9 +857,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    <!-- Ende Minimal-Impressum -->
-
-</div>
+    </div>
 
 </body>
 </html>
