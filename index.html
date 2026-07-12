@@ -49,6 +49,60 @@ table.weiteremenus a:hover {color:#ffffff;background-color:#ff0000;}
 a.email:active {color: black; font-family: arial, helvetica; font-size: 17pt; text-decoration:none}
 a.preisliste:active {color: blue; font-family: arial, helvetica; font-size: 17pt; text-decoration: none}
 a:active {background-color:#ffffc0;}
+
+/* NEU: Flex-Container für die versetzte Bilder-Collage am Ende */
+.collage-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+
+/* NEU: Fotoalbum-Stil für die Collage */
+.collage-img {
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border: 1px solid #e0e0e0;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* NEU: Unterschiedliche Größenklassen und Versatz (Rotation + Translation) */
+.w-30 { width: 28%; transform: rotate(-2.5deg) translateY(15px); }
+.w-35 { width: 33%; transform: rotate(3deg) translateY(-10px); }
+.w-40 { width: 38%; transform: rotate(-1.5deg) translateY(20px); }
+.w-45 { width: 43%; transform: rotate(2deg) translateY(-5px); }
+.w-50 { width: 48%; transform: rotate(-2deg) translateY(8px); }
+.w-55 { width: 53%; transform: rotate(1.5deg) translateY(-12px); }
+
+.collage-img:hover {
+    transform: scale(1.04) rotate(0deg);
+    z-index: 99;
+}
+
+/* NEU: Rechtlicher Disclaimer Formate */
+footer {
+    font-size: 9.5pt;
+    color: #333333;
+    text-align: justify;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+footer h3 {
+    text-align: center;
+    font-size: 12pt;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #111;
+}
 </style>
 
 <script language="javascript" type="text/javascript">
@@ -667,21 +721,13 @@ Die Ausstattungen beinhaltet <br>
  und Badetücher. 
 </div>
 
-<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:490%; width: 30%; text-align: center ; left: 50%">
-  Die komplette Wohnung gibt es <br>
-   schon ab ca 130,- EUR pro Tag. <br>
- ( Monatspreis in der Nebensaison umgerechnet 
-  auf Tagesbasis bei einem USD-Kurs von 1,10 ) <br>
- Darin sind bereits alle Kosten wie <br>
- Steuern oder Endreinigung<br>
- enthalten. <br>
- <br>
- Eine genaue Übersicht finden Sie <br>
-      in der <br>
-          <a class="preisliste" id="preisliste" href="preise.htm"> Preisliste </a>. <br>
- <br>
- Bei der Suche nach einem günstigen <br>
-        Flug sind wir gerne behilflich 
+<div style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; position: absolute; top:490%; width: 45%; text-align: center ; left: 45%; font-weight:500;">
+Die komplette Wohnung gibt es schon ab ca. 130,- EUR pro Tag.<br>
+(Monatspreis in der Nebensaison umgerechnet auf Tagesbasis<br>
+bei einem USD-Kurs von 1,10). Darin sind bereits alle Kosten<br>
+wie Steuern oder Endreinigung enthalten.<br><br>
+Eine genaue Übersicht finden Sie in der <a href="preise.htm">Preisliste</a>.<br><br>
+Bei der Suche nach einem günstigen Flug sind wir gerne behilflich.
 </div>
 
 <div style="position: absolute; top:490%; left: 5%; width: 20%;">
@@ -782,6 +828,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </form>
 </div>
 
+<!-- CONTAINER FÜR COLLAGE, DISCLAIMER UND IMPRESSUM IM FOTOALBUM-STIL -->
 <div style="position: absolute; top: 853%; left: 5%; width: 90%; color: black; padding-bottom: 80px; text-align: initial;">
     
     <div class="collage-container">
@@ -812,6 +859,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
+    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
@@ -829,7 +877,9 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das flux veräußerte Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    </div>
+    <!-- Ende Minimal-Impressum -->
+
+</div>
 
 </body>
 </html>
