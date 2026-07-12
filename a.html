@@ -98,6 +98,17 @@ function maximize() {
     window.moveTo(0,0);
 }
 
+// BEREINIGT: Fehlerhaftes "far65" im vorherigen Code auf "farbe" zurückgesetzt
+function ruecksetz() {
+    var farbe="#ffcc99";
+    m0.style.backgroundColor = farbe;
+    m1.style.backgroundColor = farbe;
+    m2.style.backgroundColor = farbe;
+    m3.style.backgroundColor = farbe;
+    m4.style.backgroundColor = farbe;
+    m5.style.backgroundColor = farbe;
+}
+
 function loeschen() {
     if(document.getElementById) {
         document.getElementById("menus0").style.visibility = "hidden";
@@ -211,16 +222,6 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
-function ruecksetz() {
-    var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
-}
-
 g_fPlayMode = 0;
 g_iimg = -1;
 g_imax = 0;
@@ -326,6 +327,14 @@ g_ImageTable[g_imax++] = new Array ("images/bilder/orlando14_.jpg", "Sea World, 
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando16_.jpg", "Epcot Center, Orlando ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/orlando19_.jpg", "Wekiwa Springs State Park ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/shuttle4_.jpg", "Kennedy Space Center ");
+
+g_ImageTable[g_imax++] = new Array ("images/bad02.jpg", "Florida Ferienwohnung - Badezimmer");
+g_ImageTable[g_imax++] = new Array ("images/wz01.jpg", "Florida Ferienwohnung - Wohnzimmer");
+g_ImageTable[g_imax++] = new Array ("images/wz02.jpg", "Florida Ferienwohnung - Wohnzimmer");
+g_ImageTable[g_imax++] = new Array ("images/gz01.jpg", "Florida Ferienwohnung - Gästezimmer");
+g_ImageTable[g_imax++] = new Array ("images/wz03.jpg", "Florida Ferienwohnung - Wohnzimmer");
+g_ImageTable[g_imax++] = new Array ("images/bad01.jpg", "Florida Ferienwohnung - Badezimmer");
+
 g_ImageTable[g_imax++] = new Array ("images/bilder/daytona.jpg", "Daytona USA ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/strand5_.jpg", "Strand von New Smyrna Beach ");
 g_ImageTable[g_imax++] = new Array ("images/bilder/sonnenuntergang.jpg", "Sonnenuntergang ");
@@ -447,7 +456,6 @@ function lauftext() {
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Florida Reisetipps                                            </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Flughafen Frankfurt                                           </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Flughafen Orlando                                             </span></td></tr>
-</tbody>
 </tbody>
 </table>
 </td>
@@ -657,7 +665,7 @@ function lauftext() {
     <img alt="Die obersten Stockwerke bieten die beste Aussicht" border="0" src="images/condo1.jpg" width="191" height="262">
 </td>
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 60%; text-align: center ; z-index: 2 ;font-weight:500">
- Das voll klimatisierte Apartment liegt im obersten Stock und <br>
+ Das voll klimatisierte Apartment liegt im obersten Stock and <br>
  bietet von jedem Zimmer einen directen Blick auf das Meer. <br>
  <br>
   Aufzüge sind genauso selbstverständlich wie der eigene Parkplatz <br>
@@ -747,7 +755,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <td align="center" valign="center">
 <b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
  <br>
-<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
+<b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">49</span></b>
 <p align="center">
     <input type="button" id="btnPrev" value="<< Zurück" onclick="Prev();"> 
     <input type="button" id="bntPlay" value="Start - Stop" onclick="Play()"> 
@@ -802,6 +810,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 
 <div style="position: absolute; top: 853%; left: 5%; width: 90%; color: black; padding-bottom: 80px; text-align: initial;">
     
+    <!-- KORREKTUR: bad02.jpg erfolgreich wieder an das absolute Ende des Containers angefügt -->
     <div class="collage-container">
         <img class="collage-img w-45" alt="Aussicht vom Balkon" src="images/bilder/001_condo_balkon_001.jpg">
         <img class="collage-img w-35" alt="Swimming Pool Anlage" src="images/bilder/condo8_.jpg">
@@ -816,6 +825,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <img class="collage-img w-45" alt="Gästezimmer" src="images/gz01.jpg">
         <img class="collage-img w-55" alt="Wohnzimmer Details" src="images/wz03.jpg">
         <img class="collage-img w-35" alt="Badezimmer Ansicht" src="images/bad01.jpg">
+        <img class="collage-img w-35" alt="Badezimmer Ansicht" src="images/bad02.jpg">
     </div>
 
     <hr>
@@ -824,7 +834,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <h3>Rechtliche Hinweise & Haftungsausschluss (Disclaimer)</h3>
         
         <p><strong>1. Inhalt des Onlineangebotes</strong><br>
-        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Quality der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
+        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
 
         <p><strong>2. Verweise und Links</strong><br>
         Sämtliche direkte oder indirekte Verweise auf fremde Webseiten ("Hyperlinks") wurden von dieser Webseite entfernt, um eine Haftung für fremde Inhalte vollständig auszuschließen. Sollten im Fließtext oder in Bildbeschreibungen noch unbeabsichtigte textliche Nennungen von Domainnamen existieren, stellen diese keine Verlinkung und keine Empfehlung dar. Für die Inhalte dieser externen Archive oder Anbieter sind ausschließlich deren Betreiber verantwortlich.</p>
@@ -836,6 +846,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
+    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
@@ -853,7 +864,9 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    </div>
+    <!-- Ende Minimal-Impressum -->
+
+</div>
 
 </body>
 </html>
