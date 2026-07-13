@@ -171,18 +171,13 @@ function countdown() {
     cminute = cminute < 10 ? "0" + cminute : cminute;
     csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
 
-    var elTag = document.getElementById("countertag");
-    var elStunde = document.getElementById("counterstunde");
-    var elMinute = document.getElementById("counterminute");
-    var elSekunde = document.getElementById("countersekunde");
-    var elDesc = document.getElementById("beschreibung");
-
-    if (elTag) elTag.value = "      " + ctag;
-    if (elStunde) elStunde.value = "       " + cstunde;
-    if (elMinute) elMinute.value = "       " + cminute;
-    if (elSekunde) elSekunde.value = "       " + csekunde;
-    if (elDesc) elDesc.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
-
+    if (document.getElementById("countertag")) {
+        document.getElementById("countertag").value = "      " + ctag;
+        document.getElementById("counterstunde").value = "       " + cstunde;
+        document.getElementById("counterminute").value = "       " + cminute;
+        document.getElementById("countersekunde").value = "       " + csekunde;
+        document.getElementById("beschreibung").value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+    }
     setTimeout(countdown, 1000);
 }
 
@@ -423,7 +418,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -444,7 +439,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -467,7 +462,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -494,7 +489,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +514,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -541,7 +536,7 @@ function lauftext() {
 </tbody>
 </table>
 </td>
-<td width="50" onmouseover="loeschen()"></td>
+<td style="width: 50px;" onmouseover="loeschen()"></td>
 </tr>
 </tbody>
 </table>
@@ -630,7 +625,7 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:239%; left: 5%; width: 90%;">
-<table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
+<table style="width: 100%; border-collapse: separate; border-spacing: 10px; border: 0px none;">
 <tbody>
 <tr style="vertical-align: middle; text-align: center;">
 <td style="width: 30%; margin-left: 10%; float: left ; z-index: 2; padding: 0;">
@@ -649,7 +644,7 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:306%; left: 5%; width: 90%;">
-<table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
+<table style="width: 100%; border-collapse: separate; border-spacing: 10px; border: 0px none;">
 <tbody>
 <tr style="vertical-align: middle; text-align: center;">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 1%; padding-bottom: 1%;">
