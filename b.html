@@ -44,6 +44,9 @@ table.weiteremenus .menu-link:hover {color:#ffffff; background-color:#ff0000;}
 
 .menuleiste td, .menus td, .weiteremenus td { padding: 0; }
 
+/* KORREKTUR: Laut W3C-Empfehlung zentrales Bild-Border-Handling definiert */
+img { border: 0; }
+
 .collage-container {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +173,6 @@ function countdown() {
     cminute = cminute < 10 ? "0" + cminute : cminute;
     csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
 
-    /* KORREKTUR: Auf krisenfeste, direkte ID-Abfragen umgestellt, um Abstürze zu verhindern */
     if (document.getElementById("countertag")) {
         document.getElementById("countertag").value = "      " + ctag;
         document.getElementById("counterstunde").value = "       " + cstunde;
@@ -377,8 +379,7 @@ function lauftext() {
 </script>
 </head>
 
-<!-- KORREKTUR: Auf standardkonforme Semikolons zur Befehlskettentrennung im Inline-Handler umgestellt -->
-<body onload="stop(); lauftext(); countdown(); maximize();">
+<body>
 
 <div id="menubar">
 <table id="menutab" class="menuleiste" style="background-color: #FFFFC0; border-collapse: collapse; border:2px solid #cccccc;">
@@ -532,12 +533,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
+<img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." height="85" width="100" src="images/sonne.gif">
 
 <div style="color: #955af4; position: absolute; top: 2.5%; left:155px; z-index: 2; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 <div style="color: silver; position: absolute; top: 2.9%; left: 157px; z-index:1; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 
-<img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
+<img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." height="85" width="100" src="images/sonne.gif">
 
 <div style="background-color: #fec364; border-bottom-style: outset; BORDER-LEFT-STYLE: outset; BORDER-RIGHT-STYLE: outset; BORDER-TOP-STYLE: outset; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 25pt; left:5%;right: 5%; POSITION: absolute; TEXT-ALIGN: center; TOP: 15%; WIDTH: 90%;">
  Apartment direkt am Strand von New Smyrna Beach 
@@ -551,13 +552,13 @@ function lauftext() {
 <div style="position:absolute; top:52%; width:100%; z-index:2;">
 <table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="top">
-<td width="55%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0;">
+<tr style="vertical-align: top;">
+<td style="width: 55%; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0;">
  <br><br><br>Herzlich Willkommen im <span style="font-size: larger;">"Seacoast Condominium"</span>,<br>
  einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
  Die Ferienwohnung befindet sich in einer very gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
-<td width="45%" valign="bottom" align="right" style="padding: 0; padding-right: 5%;">
-    <img id="rechtskarte" border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
+<td style="width: 45%; text-align: right; padding: 0; padding-right: 5%;">
+    <img id="rechtskarte" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
 </td>
 </tr>
 </tbody>
@@ -592,9 +593,9 @@ function lauftext() {
 <div style="position:absolute; top:165% ; text-align:center;  left: 10%; right: 10%">
 <table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center"> 
+<tr style="vertical-align: middle;" align="center"> 
 <td style="clear: both; z-index: 2; padding: 0;">
-    <img align="middle" alt="aktuelle Bilder von der Strandkamera in New Smyrna Beach" border="0" src="images/strand_neu.jpg" width="1000" height="269">
+    <img align="middle" alt="aktuelle Bilder von der Strandkamera in New Smyrna Beach" src="images/strand_neu.jpg" width="1000" height="269">
 </td>
 </tr>
 </tbody>
@@ -604,7 +605,7 @@ function lauftext() {
 <div style="position:absolute; top:215%; left: 5%; width: 90%;">
 <table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
+<tr style="vertical-align: middle;" align="center">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding: 0;">
  New Smyrna Beach ist der ideale Standort, um die many Attraktionen in Zentral Florida zu besichtigen, <br>
  ganz egal ob Sie nun Mickey Mouse im Disneyland, die Welt der Zukunft im Epcot Center, Sea World, <br>
@@ -618,11 +619,11 @@ function lauftext() {
 <div style="position:absolute; top:239%; left: 5%; width: 90%;">
 <table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
-<td width="30%" style="margin-left: 10%; float: left ; z-index: 2; padding: 0;">
-    <img alt="Willkommen in Disneyland" border="0" height="186" width="167" src="images/disney.gif">
+<tr style="vertical-align: middle;" align="center">
+<td style="width: 30%; margin-left: 10%; float: left ; z-index: 2; padding: 0;">
+    <img alt="Willkommen in Disneyland" height="186" width="167" src="images/disney.gif">
 </td>
-<td width="70%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
+<td style="width: 70%; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
  Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
  Then wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
  der ewigen Jugend in Ponce de Leon im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
@@ -637,14 +638,14 @@ function lauftext() {
 <div style="position:absolute; top:306%; left: 5%; width: 90%;">
 <table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
+<tr style="vertical-align: middle;" align="center">
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 1%; padding-bottom: 1%;">
  In dem Einkaufszentrum direkt gegenüber der Straße können Sie bequem zu Fuß alle<br>
  notwendigen Lebensmittel, Strandutensilien oder Andenken erwerben.<br>
  Ebenso können Sie sich bei dem dort ansässigen Friseur oder Nagelstudio verwöhnen lassen.
 </td>
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 55%; text-align: center ; z-index: 2 ;font-weight:500; padding: 1%;">
-    <img alt="das ist die neue Kueche !!!" border="0" src="images/kueche_neu.jpg" width="550" height="266">
+    <img alt="das ist die neue Kueche !!!" src="images/kueche_neu.jpg" width="550" height="266">
 </td>
 </tr>
 </tbody>
@@ -654,9 +655,9 @@ function lauftext() {
 <div style="position:absolute; top:355%; left: 5%; width: 90%;">
 <table style="width: 100%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
+<tr style="vertical-align: middle;" align="center">
 <td style="margin-left: 10%; width:30% ;float: left ; z-index: 2; padding: 0;">
-    <img alt="Die obersten Stockwerke bieten die beste Aussicht" border="0" src="images/condo1.jpg" width="191" height="262">
+    <img alt="Die obersten Stockwerke bieten die beste Aussicht" src="images/condo1.jpg" width="191" height="262">
 </td>
 <td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 60%; text-align: center ; z-index: 2 ;font-weight:500; padding: 0;">
  Das voll klimatisierte Apartment liegt im obersten Stock and <br>
@@ -674,7 +675,7 @@ function lauftext() {
 </div>
 
 <div style="position: absolute; top:402%; left: 42%; width: 20%">
-    <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/condo_001.png" width="550" height="416">
+    <img alt="Hier ein Blick in das Wohnzimmer" src="images/condo_001.png" width="550" height="416">
 </div>
  <br>
  <br>
@@ -711,11 +712,11 @@ Bei der Suche nach einem günstigen Flug sind wir gerne behilflich.
 </div>
 
 <div style="position: absolute; top:490%; left: 5%; width: 20%;">
-    <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
+    <img alt="Wer besucht mich in SEA World ?" src="images/flamingo1.jpg" width="180" height="165">
 </div>
 
 <div style="position: absolute; top:575%; left: 10%; right: 30%">
-<img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
+<img alt="Hier ein Blick in das Wohnzimmer" src="images/wz_pan.jpg" width="850" height="200"></div>
  <br>
  <br>
 
@@ -762,12 +763,12 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <fieldset style="background-color:#DDEEFF">
 <table style="text-align:center; background-color:#DDEEFF; border-collapse: collapse; border: 0px none;">
 <tr>
-<td width="33%" align="middle" rowspan="6">
-    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
+<td style="width: 33%; vertical-align: middle;" rowspan="6">
+    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
-<td width="33%" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
-<td width="33%" align="middle" rowspan="6">
-    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
+<td style="width: 33%;" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
+<td style="width: 33%; vertical-align: middle;" rowspan="6">
+    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
 </tr>
 <tr><td> </td><td> </td><td> </td></tr>
@@ -789,7 +790,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <tr>
 <td> </td>
 <td><b>Sekunden: </b></td>
-<!-- KORREKTUR: Der Name-Wert wurde jetzt fehlerfrei von counterssekunde auf countersekunde korrigiert -->
 <td><input id="countersekunde" name="countersekunde" size="7"></td>
 </tr>
 </table> 
@@ -833,7 +833,6 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile or einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr or nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt and ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
-    <!-- Beginn Minimal-Impressum für private Archivseite -->
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
     <div style="font-family: Arial, sans-serif; font-size: 11px; color: #666; line-height: 1.6; padding: 20px 0; text-align: center;">
         <p style="font-size: 11px; font-weight: bold; color: #666; margin: 0 0 5px 0; max-width: 100%;">Impressum (Rein private, inaktive Archivpräsenz)</p>
@@ -851,9 +850,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
             Das Objekt ist verkauft. Diese Domain dient ausschließlich als privates, historisches Archiv.
         </p>
     </div>
-    <!-- Ende Minimal-Impressum -->
-
-</div>
+    </div>
 
 </body>
 </html>
