@@ -13,10 +13,10 @@
 <meta name="Title" content="Floridaurlaub - Florida Ferienwohnung direkt am Strand von New Smyrna Beach">
 <title>Florida Ferienwohnung direkt am Strand von New Smyrna Beach</title>
 <link rel="SHORTCUT ICON" href="https://www.florida-strandwohnung.de/favicon.ico" type="image/ico">
-<style type="text/css" media="print">
+<style media="print">
     @page { size:landscape; }
 </style>
-<style type="text/css">
+<style>
 @page { size:landscape; }
 BODY {font-weight:500; background-image:url('images/muschel_001.jpg'); background-attachment:fixed; color: black; width: 100%; background-repeat:no-repeat; background-color:#fffff6; overflow-x: hidden;}
 h1 {font-family: wide latin, arial black, helvetica, sans-serif; font-size: 2.4em}
@@ -41,6 +41,9 @@ table .menu-link {color:black; font-size:8pt;}
 table.menus .menu-link:hover {background-color:#ff0000; color:#ffffff;}
 table.menuleiste .menu-link:hover {color:#ff0000; background-color:#ffcc99;}
 table.weiteremenus .menu-link:hover {color:#ffffff; background-color:#ff0000;}
+
+.menuleiste td, .menus td, .weiteremenus td { padding: 0; }
+img { border: 0; }
 
 .collage-container {
     display: flex;
@@ -92,7 +95,7 @@ footer h2 {
 }
 </style>
 
-<script language="javascript" type="text/javascript">
+<script>
 function maximize() {
     window.resizeTo(screen.availWidth, screen.availHeight);
     window.moveTo(0,0);
@@ -168,13 +171,18 @@ function countdown() {
     cminute = cminute < 10 ? "0" + cminute : cminute;
     csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
 
-    if (document.tafel) {
-        document.tafel.countertag.value = "      " + ctag;
-        document.tafel.counterstunde.value = "       " + cstunde;
-        document.tafel.counterminute.value = "       " + cminute;
-        document.tafel.countersekunde.value = "       " + csekunde;
-        document.tafel.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
-    }
+    var elTag = document.getElementById("countertag");
+    var elStunde = document.getElementById("counterstunde");
+    var elMinute = document.getElementById("counterminute");
+    var elSekunde = document.getElementById("countersekunde");
+    var elDesc = document.getElementById("beschreibung");
+
+    if (elTag) elTag.value = "      " + ctag;
+    if (elStunde) elStunde.value = "       " + cstunde;
+    if (elMinute) elMinute.value = "       " + cminute;
+    if (elSekunde) elSekunde.value = "       " + csekunde;
+    if (elDesc) elDesc.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+
     setTimeout(countdown, 1000);
 }
 
@@ -213,12 +221,12 @@ function rein(zelle) {
 
 function ruecksetz() {
     var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
+    if(document.getElementById("m0")) document.getElementById("m0").style.backgroundColor = farbe;
+    if(document.getElementById("m1")) document.getElementById("m1").style.backgroundColor = farbe;
+    if(document.getElementById("m2")) document.getElementById("m2").style.backgroundColor = farbe;
+    if(document.getElementById("m3")) document.getElementById("m3").style.backgroundColor = farbe;
+    if(document.getElementById("m4")) document.getElementById("m4").style.backgroundColor = farbe;
+    if(document.getElementById("m5")) document.getElementById("m5").style.backgroundColor = farbe;
 }
 
 g_fPlayMode = 0;
@@ -242,30 +250,40 @@ function getobject(obj){
 }
 
 function Update(){
-    getobject("_Ath_Slide" ).src = g_ImageTable[g_iimg][0];
-    getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1];
-    getobject("_Ath_Img_X").innerHTML = g_iimg + 1;
-    getobject("_Ath_Img_N").innerHTML = g_imax;
+    var slide = getobject("_Ath_Slide");
+    var fileName = getobject("_Ath_FileName");
+    var imgX = getobject("_Ath_Img_X");
+    var imgN = getobject("_Ath_Img_N");
+
+    if (slide) slide.src = g_ImageTable[g_iimg][0];
+    if (fileName) fileName.innerHTML = g_ImageTable[g_iimg][1];
+    if (imgX) imgX.innerHTML = g_iimg + 1;
+    if (imgN) imgN.innerHTML = g_imax;
 }
 
 function stop() {
     g_fPlayMode = !g_fPlayMode;
-    getobject("btnPrev").disabled = getobject("btnNext").disabled = true;
+    var btnPrev = getobject("btnPrev");
+    var btnNext = getobject("btnNext");
+    if (btnPrev) btnPrev.disabled = true;
+    if (btnNext) btnNext.disabled = true;
+    
     g_iimg=0;
-    getobject("_Ath_Slide" ).src = g_ImageTable[g_iimg][0];
-    getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1];
-    getobject("_Ath_Img_X").innerHTML = g_iimg + 1;
-    getobject("_Ath_Img_N").innerHTML = g_imax;
+    Update();
     if (g_iimg==0) Play();
 }         
 
 function Play() {
     g_fPlayMode = !g_fPlayMode;
+    var btnPrev = getobject("btnPrev");
+    var btnNext = getobject("btnNext");
     if (g_fPlayMode) {
-        getobject("btnPrev").disabled = getobject("btnNext").disabled = true;
+        if (btnPrev) btnPrev.disabled = true;
+        if (btnNext) btnNext.disabled = true;
         Next();
     } else {
-        getobject("btnPrev").disabled = getobject("btnNext").disabled = false;
+        if (btnPrev) btnPrev.disabled = false;
+        if (btnNext) btnNext.disabled = false;
     }
 }
 
@@ -361,13 +379,12 @@ function lauftext() {
         l=l+1;
     }
     ticktext=text.substring(j,text.length)+text.substring(0,j);
-    if (l<2) {
-        if(document.getElementById("tickfeld")) {
-            document.getElementById("tickfeld").value=ticktext;
-        }
-    } else {
-        if(document.getElementById("tickfeld")) {
-            document.getElementById("tickfeld").value=text;
+    var tf = document.getElementById("tickfeld");
+    if (tf) {
+        if (l<2) {
+            tf.value=ticktext;
+        } else {
+            tf.value=text;
         }
     }
     setTimeout(lauftext,100);
@@ -375,10 +392,10 @@ function lauftext() {
 </script>
 </head>
 
-<body onload="stop(), lauftext(), countdown(), maximize()" vlink="gray">
+<body onload="stop(); lauftext(); countdown(); maximize();">
 
 <div id="menubar">
-<table id="menutab" class="menuleiste" bgcolor="#FFFFC0" cellpadding="0" cellspacing="0" style="border:2px solid #cccccc;">
+<table id="menutab" class="menuleiste" style="background-color: #FFFFC0; border-collapse: collapse; border:2px solid #cccccc;">
 <tbody>
 <tr>
 <td onmouseover="rein(this)" id="m0" style="border-right:2px solid #cccccc;"><span class="menu-link" onmouseover="overmenus0()"> Wichtige Infos </span></td>
@@ -392,12 +409,12 @@ function lauftext() {
 </table>
 </div>
 
-<table id="menus0" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus0" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="100" onmouseover="loeschen()"></td>
+<td style="width: 100px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Belegungsplan                  </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Preisliste                           </span></td></tr>
@@ -411,12 +428,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<table id="menus1" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus1" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="160" onmouseover="loeschen()"></td>
+<td style="width: 160px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Seacoast Condominium Homepage                  </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> New Smyrna Beach Info Seiten                         </span></td></tr>
@@ -432,12 +449,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<table id="menus2" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus2" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="265" onmouseover="loeschen()"></td>
+<td style="width: 265px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Routenplaner - Einfach Start- und Zielort eingeben   </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Zillow.com                                        </span></td></tr>
@@ -455,12 +472,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<table id="menus3" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus3" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="455" onmouseover="loeschen()"></td>
+<td style="width: 455px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Disneyworld                                     </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><a class="menu-link"> Seaworld                                           </a></td></tr>
@@ -482,12 +499,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<table id="menus4" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus4" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="520" onmouseover="loeschen()"></td>
+<td style="width: 520px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Space Shuttle Starts                                        </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Alligatoren                                                          </span></td></tr>
@@ -507,12 +524,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<table id="menus5" class="menus" style="visibility:hidden" border="0" cellpadding="0" cellspacing="0">
+<table id="menus5" class="menus" style="visibility:hidden; border-collapse: collapse; border: 0px none;">
 <tbody>
 <tr>
-<td width="640" onmouseover="loeschen()"></td>
+<td style="width: 640px;" onmouseover="loeschen()"></td>
 <td>
-<table class="weiteremenus" cellpadding="0" cellspacing="0">
+<table class="weiteremenus" style="border-collapse: collapse;">
 <tbody>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Alexander Wagner                                        </span></td></tr>
 <tr><td style="border-bottom:2px solid #cccccc;"><span class="menu-link"> Birkenstrasse 27                                               </span></td></tr>
@@ -529,12 +546,12 @@ function lauftext() {
 </tbody>
 </table>
 
-<img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
+<img style="POSITION: absolute ; z-index: 2 ; left:2%; top: 3%; border: 0px none ;" alt="Hier gibt es die aktuellen Wetterinformationen." height="85" width="100" src="images/sonne.gif">
 
 <div style="color: #955af4; position: absolute; top: 2.5%; left:155px; z-index: 2; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 <div style="color: silver; position: absolute; top: 2.9%; left: 157px; z-index:1; white-space:nowrap"><h1>Florida Ferienwohnung</h1></div>
 
-<img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." border="0" height="85" width="100" src="images/sonne.gif">
+<img style="POSITION: absolute ; z-index: 3 ;float: right; right:2%; top: 3%; border: 0px none ; left:90%" alt="Hier gibt es die aktuellen Wetterinformationen." height="85" width="100" src="images/sonne.gif">
 
 <div style="background-color: #fec364; border-bottom-style: outset; BORDER-LEFT-STYLE: outset; BORDER-RIGHT-STYLE: outset; BORDER-TOP-STYLE: outset; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 25pt; left:5%;right: 5%; POSITION: absolute; TEXT-ALIGN: center; TOP: 15%; WIDTH: 90%;">
  Apartment direkt am Strand von New Smyrna Beach 
@@ -546,15 +563,15 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:52%; width:100%; z-index:2;">
-<table width="100%" border="0" cellpadding="1%" cellspacing="1%">
+<table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="top">
-<td width="55%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%;">
+<tr style="vertical-align: top;">
+<td style="width: 55%; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0;">
  <br><br><br>Herzlich Willkommen im <span style="font-size: larger;">"Seacoast Condominium"</span>,<br>
  einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
- Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
-<td width="45%" valign="bottom" align="right" style="padding-right: 5%;">
-    <img id="rechtskarte" border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
+ Die Ferienwohnung befindet sich in einer very gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
+<td style="width: 45%; text-align: right; padding: 0; padding-right: 5%;">
+    <img id="rechtskarte" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
 </td>
 </tr>
 </tbody>
@@ -587,11 +604,11 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:165% ; text-align:center;  left: 10%; right: 10%">
-<table width="100%" border="0"  cellpadding="1%" cellspacing="1%">
+<table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center"> 
-<td style="clear: both; z-index: 2">
-    <img align="middle" alt="aktuelle Bilder von der Strandkamera in New Smyrna Beach" border="0" src="images/strand_neu.jpg" width="1000" height="269">
+<tr style="vertical-align: middle; text-align: center;"> 
+<td style="clear: both; z-index: 2; padding: 0;">
+    <img style="vertical-align: middle;" alt="aktuelle Bilder von der Strandkamera in New Smyrna Beach" src="images/strand_neu.jpg" width="1000" height="269">
 </td>
 </tr>
 </tbody>
@@ -599,10 +616,10 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:215%; left: 5%; width: 90%;">
-<table border="0" width="100%" cellpadding="1%" cellspacing="1%">
+<table style="width: 100%; border-collapse: collapse; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center">
+<tr style="vertical-align: middle; text-align: center;">
+<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding: 0;">
  New Smyrna Beach ist der ideale Standort, um die many Attraktionen in Zentral Florida zu besichtigen, <br>
  ganz egal ob Sie nun Mickey Mouse im Disneyland, die Welt der Zukunft im Epcot Center, Sea World, <br>
  die Filmstudios ( MGM / Universal ) oder aber einen Start der Weltraumfähre <br>
@@ -613,15 +630,15 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:239%; left: 5%; width: 90%;">
-<table border="0" cellspacing="1%" cellpadding="0%" width="100%">
+<table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
-<td width="30%" style="margin-left: 10%; float: left ; z-index: 2">
-    <img alt="Willkommen in Disneyland" border="0" height="186" width="167" src="images/disney.gif">
+<tr style="vertical-align: middle; text-align: center;">
+<td style="width: 30%; margin-left: 10%; float: left ; z-index: 2; padding: 0;">
+    <img alt="Willkommen in Disneyland" height="186" width="167" src="images/disney.gif">
 </td>
-<td width="70%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
+<td style="width: 70%; FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0; text-align: center ; z-index: 2 ;font-weight:500; line-height: 1.6;">
  Vielleicht interessieren Sie sich aber auch für die Geschichte Floridas.<br>
- Dann wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
+ Then wäre zum Beispiel Saint Augustine, die älteste Stadt Amerikas, oder der Brunnen<br>
  der ewigen Jugend in Ponce de Leon im Norden ein ideales Ausflugsziel – alles in greifbarer Nähe.<br><br>
  Das sportliche Angebot ist sehr umfangreich: New Smyrna Beach verfügt<br>
  unter anderem über zahlreiche Golf- und Tennisplätze.
@@ -632,16 +649,16 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:306%; left: 5%; width: 90%;">
-<table border="0" width="100%" cellspacing="1%" cellpadding="1%">
+<table style="width: 100%; border-collapse: separate; border-spacing: 1%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%;">
+<tr style="vertical-align: middle; text-align: center;">
+<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 1%; padding-bottom: 1%;">
  In dem Einkaufszentrum direkt gegenüber der Straße können Sie bequem zu Fuß alle<br>
  notwendigen Lebensmittel, Strandutensilien oder Andenken erwerben.<br>
  Ebenso können Sie sich bei dem dort ansässigen Friseur oder Nagelstudio verwöhnen lassen.
 </td>
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 55%; text-align: center ; z-index: 2 ;font-weight:500">
-    <img alt="das ist die neue Kueche !!!" border="0" src="images/kueche_neu.jpg" width="550" height="266">
+<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 55%; text-align: center ; z-index: 2 ;font-weight:500; padding: 1%;">
+    <img alt="das ist die neue Kueche !!!" src="images/kueche_neu.jpg" width="550" height="266">
 </td>
 </tr>
 </tbody>
@@ -649,20 +666,20 @@ function lauftext() {
 </div>
 
 <div style="position:absolute; top:355%; left: 5%; width: 90%;">
-<table border="0" width="100%">
+<table style="width: 100%; border: 0px none;">
 <tbody>
-<tr valign="middle" align="center">
-<td style="margin-left: 10%; width:30% ;float: left ; z-index: 2">
-    <img alt="Die obersten Stockwerke bieten die beste Aussicht" border="0" src="images/condo1.jpg" width="191" height="262">
+<tr style="vertical-align: middle; text-align: center;">
+<td style="margin-left: 10%; width:30% ;float: left ; z-index: 2; padding: 0;">
+    <img alt="Die obersten Stockwerke bieten die beste Aussicht" src="images/condo1.jpg" width="191" height="262">
 </td>
-<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 60%; text-align: center ; z-index: 2 ;font-weight:500">
+<td style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; margin-left: 20%; left: 1%; width: 60%; text-align: center ; z-index: 2 ;font-weight:500; padding: 0;">
  Das voll klimatisierte Apartment liegt im obersten Stock and <br>
  bietet von jedem Zimmer einen directen Blick auf das Meer. <br>
  <br>
   Aufzüge sind genauso selbstverständlich wie der eigene Parkplatz <br>
  oder der beheizte Swimming Pool with Baby Becken. <br>
  <br>
- Wenn Sie einmal Hilfe benötigen sollten oder einfach <br>
+ Wenn Sie einmal Hilfe benötigen sollten or einfach <br>
  nur Anregungen suchen, z. B. für Ihre Freizeitgestaltungen, <br>
  so steht ein Hausverwalter täglich zur Verfügung. </td>
 </tr>
@@ -671,7 +688,7 @@ function lauftext() {
 </div>
 
 <div style="position: absolute; top:402%; left: 42%; width: 20%">
-    <img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/condo_001.png" width="550" height="416">
+    <img alt="Hier ein Blick in das Wohnzimmer" src="images/condo_001.png" width="550" height="416">
 </div>
  <br>
  <br>
@@ -692,7 +709,7 @@ Die Ausstattungen beinhaltet <br>
  <br>
  Mikrowelle, ein großer Kühlschrank, <br>
  Kaffeemaschine, Spülmaschine, <br>
- Toaster ist alles vorhanden, <br>
+ Toaster is alles vorhanden, <br>
  genauso wie ein Fön, <br>
  ein Bügeleisen, Bettwäsche <br>
  und Badetücher. 
@@ -702,17 +719,17 @@ Die Ausstattungen beinhaltet <br>
 Die komplette Wohnung gibt es schon ab ca. 130,- EUR pro Tag.
 (Monatspreis in der Nebensaison umgerechnet auf Tagesbasis
 bei einem USD-Kurs von 1,10). <br> Darin sind bereits alle Kosten
-wie Steuern oder Endreinigung enthalten.<br><br>
+wie Steuern or Endreinigung enthalten.<br><br>
 Eine genaue Übersicht finden Sie in der <span class="preisliste" style="font-size: 17pt; font-weight: bold; text-decoration: underline; color: blue;">Preisliste</span>.<br><br>
 Bei der Suche nach einem günstigen Flug sind wir gerne behilflich.
 </div>
 
 <div style="position: absolute; top:490%; left: 5%; width: 20%;">
-    <img alt="Wer besucht mich in SEA World ?" border="0" src="images/flamingo1.jpg" width="180" height="165">
+    <img alt="Wer besucht mich in SEA World ?" src="images/flamingo1.jpg" width="180" height="165">
 </div>
 
 <div style="position: absolute; top:575%; left: 10%; right: 30%">
-<img alt="Hier ein Blick in das Wohnzimmer" border="0" src="images/wz_pan.jpg" width="850" height="200"></div>
+<img alt="Hier ein Blick in das Wohnzimmer" src="images/wz_pan.jpg" width="850" height="200"></div>
  <br>
  <br>
 
@@ -725,20 +742,20 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <br>
 <br>
 <br>
-<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
+<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an : <br>
 <span class="email" id="email">Info@Florida-Strandwohnung.de.</span></p>
 </div>
 
 <div style="position: absolute; TOP: 683%; left: 25%; margin-right: 25%; WIDTH: 50%; height: 90%; color: black; text-align: center;">
     <table width="90%" style="margin: 0 auto;">
         <tbody>
-            <tr><td align="center" valign="center"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg" alt="Florida Ferienwohnung - Diashow Bild"></td></tr>
+            <tr><td align="center" valign="middle"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg" alt="Florida Ferienwohnung - Diashow Bild"></td></tr>
         </tbody>
     </table>
     <table width="90%" style="margin: 0 auto;">
         <tbody>
             <tr>
-                <td align="center" valign="center">
+                <td align="center" valign="middle">
                     <b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
                      <br>
                     <b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
@@ -757,14 +774,14 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <div style="position: absolute; top:793%; text-align:center; left: 10%; right: 10%">
 <form id="tafel" name="tafel" style="text-align:center">
 <fieldset style="background-color:#DDEEFF">
-<table style="text-align:center; background-color:#DDEEFF; border: 0px none; ">
+<table style="text-align:center; background-color:#DDEEFF; border-collapse: collapse; border: 0px none;">
 <tr>
-<td width="33%" align="middle" rowspan="6">
-    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
+<td style="width: 33%; vertical-align: middle;" rowspan="6">
+    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
-<td width="33%" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
-<td width="33%" align="middle" rowspan="6">
-    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" border="0" width="180" height="180">
+<td style="width: 33%;" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
+<td style="width: 33%; vertical-align: middle;" rowspan="6">
+    <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
 </tr>
 <tr><td> </td><td> </td><td> </td></tr>
@@ -786,7 +803,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <tr>
 <td> </td>
 <td><b>Sekunden: </b></td>
-<td><input id="countersekunde" name="counterssekunde" size="7"></td>
+<td><input id="countersekunde" name="countersekunde" size="7"></td>
 </tr>
 </table> 
 </fieldset>
@@ -817,16 +834,16 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
         <h2>Rechtliche Hinweise & Haftungsausschluss (Disclaimer)</h2>
         
         <p><strong>1. Inhalt des Onlineangebotes</strong><br>
-        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
+        Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Da das Objekt veräußert wurde, dienen alle Angaben ausschließlich historischen und privaten Dokumentationszwecken. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller or ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches or grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
 
         <p><strong>2. Verweise und Links</strong><br>
-        Sämtliche direkte oder indirekte Verweise auf fremde Webseiten ("Hyperlinks") wurden von dieser Webseite entfernt, um eine Haftung für fremde Inhalte vollständig auszuschließen. Sollten im Fließtext oder in Bildbeschreibungen noch unbeabsichtigte textliche Nennungen von Domainnamen existieren, stellen diese keine Verlinkung und keine Empfehlung dar. Für die Inhalte dieser externen Archive oder Anbieter sind ausschließlich deren Betreiber verantwortlich.</p>
+        Sämtliche direkte or indirekte Verweise auf fremde Webseiten ("Hyperlinks") wurden von dieser Webseite entfernt, um eine Haftung für fremde Inhalte vollständig auszuschließen. Sollten im Fließtext or in Bildbeschreibungen noch unbeabsichtigte textliche Nennungen von Domainnamen existieren, stellen diese keine Verlinkung and keine Empfehlung dar. Für die Inhalte dieser externen Archive oder Anbieter sind ausschließlich deren Betreiber verantwortlich.</p>
 
         <p><strong>3. Urheber- und Kennzeichenrecht</strong><br>
-        Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Onlineangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Urheberrecht für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen is ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
+        Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen or auf lizenzfreie Grafiken, Tondokumente, Videosequenzen and Texte zurückzugreifen. Alle innerhalb des Onlineangebotes genannten and ggf. durch Dritte geschützten Marken- and Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts and den Besitzrechten der jeweiligen eingetragenen Eigentümer. Das Urheberrecht für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung or Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen or gedruckten Publikationen is ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
 
         <p><strong>4. Rechtswirksamkeit dieses Haftungsausschlusses</strong><br>
-        Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+        Dieser Haftungsausschluss is als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile or einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr or nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt and ihrer Gültigkeit davon unberührt.</p>
     </footer>
 
     <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 50px;">
