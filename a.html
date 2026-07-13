@@ -171,13 +171,18 @@ function countdown() {
     cminute = cminute < 10 ? "0" + cminute : cminute;
     csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
 
-    if (document.getElementById("countertag")) {
-        document.getElementById("countertag").value = "      " + ctag;
-        document.getElementById("counterstunde").value = "       " + cstunde;
-        document.getElementById("counterminute").value = "       " + cminute;
-        document.getElementById("countersekunde").value = "       " + csekunde;
-        document.getElementById("beschreibung").value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
-    }
+    var elTag = document.getElementById("countertag");
+    var elStunde = document.getElementById("counterstunde");
+    var elMinute = document.getElementById("counterminute");
+    var elSekunde = document.getElementById("countersekunde");
+    var elDesc = document.getElementById("beschreibung");
+
+    if (elTag) elTag.value = "      " + ctag;
+    if (elStunde) elStunde.value = "       " + cstunde;
+    if (elMinute) elMinute.value = "       " + cminute;
+    if (elSekunde) elSekunde.value = "       " + csekunde;
+    if (elDesc) elDesc.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+
     setTimeout(countdown, 1000);
 }
 
@@ -742,15 +747,15 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 </div>
 
 <div style="position: absolute; TOP: 683%; left: 25%; margin-right: 25%; WIDTH: 50%; height: 90%; color: black; text-align: center;">
-    <table width="90%" style="margin: 0 auto;">
+    <table style="width: 90%; margin: 0 auto;">
         <tbody>
-            <tr><td align="center" valign="middle"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg" alt="Florida Ferienwohnung - Diashow Bild"></td></tr>
+            <tr><td style="text-align: center; vertical-align: middle;"><img id="_Ath_Slide" onload="OnImgLoad()" height="350" width="350" src="images/bilder/001_condo_balkon_001.jpg" alt="Florida Ferienwohnung - Diashow Bild"></td></tr>
         </tbody>
     </table>
-    <table width="90%" style="margin: 0 auto;">
+    <table style="width: 90%; margin: 0 auto;">
         <tbody>
             <tr>
-                <td align="center" valign="middle">
+                <td style="text-align: center; vertical-align: middle;">
                     <b>Beschreibung: </b><span id="_Ath_FileName">Florida Ferienwohnung - die Aussicht vom Balkon</span><br>
                      <br>
                     <b>Anzahl der Bilder: <span id="_Ath_Img_X">1</span> von <span id="_Ath_Img_N">42</span></b>
@@ -774,7 +779,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <td style="width: 33%; vertical-align: middle;" rowspan="6">
     <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
-<td style="width: 33%;" colspan="3" align="center"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
+<td style="width: 33%; text-align: center;" colspan="3"><b><input align="center" style="text-align:center" id="beschreibung" name="beschreibung" size="56"></b> </td>
 <td style="width: 33%; vertical-align: middle;" rowspan="6">
     <img alt="hier gibt es die Übersicht über alle kommenden Shuttleflüge" src="images/shuttle4.jpg" width="180" height="180">
 </td>
