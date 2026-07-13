@@ -42,7 +42,6 @@ table.menus .menu-link:hover {background-color:#ff0000; color:#ffffff;}
 table.menuleiste .menu-link:hover {color:#ff0000; background-color:#ffcc99;}
 table.weiteremenus .menu-link:hover {color:#ffffff; background-color:#ff0000;}
 
-/* KORREKTUR: Padding-Reset für die ehemals attributbasierten Menütabellen hinzugefügt */
 .menuleiste td, .menus td, .weiteremenus td { padding: 0; }
 
 .collage-container {
@@ -171,12 +170,14 @@ function countdown() {
     cminute = cminute < 10 ? "0" + cminute : cminute;
     csekunde = csekunde < 10 ? "0" + csekunde : csekunde;
 
-    if (document.tafel) {
-        document.tafel.countertag.value = "      " + ctag;
-        document.tafel.counterstunde.value = "       " + cstunde;
-        document.tafel.counterminute.value = "       " + cminute;
-        document.tafel.countersekunde.value = "       " + csekunde;
-        document.tafel.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
+    /* KORREKTUR: Modifiziert auf sichere DOM-Abfrage, um Skriptfehler zu verhindern */
+    var form = document.getElementById("tafel") || document.tafel;
+    if (form) {
+        form.countertag.value = "      " + ctag;
+        form.counterstunde.value = "       " + cstunde;
+        form.counterminute.value = "       " + cminute;
+        form.countersekunde.value = "       " + csekunde;
+        form.beschreibung.value = "Der nächste Raketenstart erfolgt am :    " + zielDatum.getDate() + "." + monatsname[zielDatum.getMonth()] + " " + zielDatum.getFullYear();
     }
     setTimeout(countdown, 1000);
 }
@@ -214,14 +215,15 @@ function rein(zelle) {
     zelle.style.backgroundColor = farbe;
 }
 
+/* KORREKTUR: Modernisiert mit getElementById, um die Menüsteuerung in allen Browsern zu stabilisieren */
 function ruecksetz() {
     var farbe="#ffcc99";
-    m0.style.backgroundColor = farbe;
-    m1.style.backgroundColor = farbe;
-    m2.style.backgroundColor = farbe;
-    m3.style.backgroundColor = farbe;
-    m4.style.backgroundColor = farbe;
-    m5.style.backgroundColor = farbe;
+    if(document.getElementById("m0")) document.getElementById("m0").style.backgroundColor = farbe;
+    if(document.getElementById("m1")) document.getElementById("m1").style.backgroundColor = farbe;
+    if(document.getElementById("m2")) document.getElementById("m2").style.backgroundColor = farbe;
+    if(document.getElementById("m3")) document.getElementById("m3").style.backgroundColor = farbe;
+    if(document.getElementById("m4")) document.getElementById("m4").style.backgroundColor = farbe;
+    if(document.getElementById("m5")) document.getElementById("m5").style.backgroundColor = farbe;
 }
 
 g_fPlayMode = 0;
@@ -555,7 +557,7 @@ function lauftext() {
 <td width="55%" style="FONT-FAMILY: Bookman Old Style, Arial; FONT-SIZE: 13pt; z-index: 2 ;font-weight:500 ; text-align: center; padding-left: 5%; padding-right: 5%; padding-top: 0; padding-bottom: 0;">
  <br><br><br>Herzlich Willkommen im <span style="font-size: larger;">"Seacoast Condominium"</span>,<br>
  einer wunderschönen, komplett eingerichteten Ferienwohnung in Florida.<br>
- Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhig Wohnanlage direkt am Meer. </td>
+ Die Ferienwohnung befindet sich in einer sehr gepflegten und ruhigen Wohnanlage direkt am Meer. </td>
 <td width="45%" valign="bottom" align="right" style="padding: 0; padding-right: 5%;">
     <img id="rechtskarte" border="0" height="496" width="455" alt="Klicken Sie hier für einen besseren Überblick." src="images/mapfloridaneumitpin_.gif">
 </td>
@@ -728,7 +730,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <br>
 <br>
 <br>
-<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an :<br>
+<p class="rahmen" id="rahmen">Falls Sie noch Fragen haben, so schreiben Sie mir eine Email an : <br>
 <span class="email" id="email">Info@Florida-Strandwohnung.de.</span></p>
 </div>
 
@@ -789,7 +791,7 @@ Die wunderschönen Erinnerungen bleiben Ihnen ein Leben lang erhalten.<br>
 <tr>
 <td> </td>
 <td><b>Sekunden: </b></td>
-<td><input id="countersekunde" name="counterssekunde" size="7"></td>
+<td><input id="countersekunde" name="countersekunde" size="7"></td>
 </tr>
 </table> 
 </fieldset>
